@@ -1,0 +1,50 @@
+@import '../../scss/variables.scss';
+
+.badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-extra-small);
+    background-color: var(--background-secondary);
+    color: var(--text-secondary);
+    padding: 0.2rem 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: normal;
+    white-space: nowrap;
+    gap: 0.5rem;
+    cursor: default;
+
+    &--success {
+        background-color: var(--status-green-surface-success);
+        color: var(--status-green-press-success);
+    }
+
+    &--error {
+        background-color: var(--status-red-surface-danger);
+        color: var(--status-red-danger);
+    }
+
+    &--await {
+        background-color: var(--background-tertiary);
+        color: var(--text-secondary);
+    }
+
+    &--work {
+        background-color: var(--status-blue-surface);
+        color: var(--status-blue-click);
+    }
+
+    &--dark {
+        background-color: var(--text-primary);
+        color: var(--background-card-primary);
+    }
+
+    &--large {
+        font-size: var(--font-size-default);
+        padding: 0.4rem 1rem;
+    }
+
+    svg {
+        transform: scale(125%);
+    }
+}

@@ -1,0 +1,67 @@
+@import './variables.scss';
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-weight: 800;
+    src: url('../assets/fonts/NotoSans-ExtraBold.ttf');
+}
+@font-face {
+    font-family: 'Noto Sans';
+    font-weight: bold;
+    src: url('../assets/fonts/NotoSans-SemiBold.ttf');
+}
+@font-face {
+    font-family: 'Noto Sans';
+    font-weight: normal;
+    src: url('../assets/fonts/NotoSans-Regular.ttf');
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    color: var(--text-primary);
+    font-size: var(--font-size-default);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a {
+    color: var(--primary-default);
+    font-size: var(--font-size-default);
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--primary-hover);
+    }
+
+    &:active {
+        color: var(--primary-press);
+    }
+}
+
+.page {
+    &__badge {
+        display: flex;
+    }
+
+    &__link {
+        font-weight: bold;
+    }
+}

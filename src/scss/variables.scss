@@ -1,0 +1,161 @@
+:root {
+    // FONTS
+    --font-size-extra-small: 1rem;
+    --font-size-smallest: 1.2rem;
+    --font-size-small: 1.4rem;
+    --font-size-default: 1.6rem;
+    --font-size-normal: 1.8rem;
+    --font-size-medium: 2rem;
+    --font-size-large: 2.4rem;
+
+    // MODAL
+    --background-modal: #37474fdd;
+
+    // PRIMARY
+    --primary-default: #0062ff; // Основные кликабельные элементы, Состояние - Default
+    --primary-hover: #0046e2; // Основные кликабельные элементы, Состояние - Hover
+    --primary-press: #0132b0; // Основные кликабельные элементы, Состояние - Press/Click
+
+    // PRIMARY LIGHT
+    --primary-light-default: #dde9ff; // Дополнительные кликабельные элементы, Состояние - Default
+    --primary-light-hover: #a7c7ff; // Дополнительные кликабельные элементы, Состояние - Hover
+    --primary-light-click: #6fa3ff; // Дополнительные кликабельные элементы, Состояние - Click
+
+    // ATOMS
+    --atoms-dark-grey: #9ca0a7; // Светлый цвет для небольший элементов (иконки, дивайдеры)
+    --atoms-default: #dde3ea; // Темный цвет для небольший элементов (иконки, дивайдеры)
+    --atoms-stroke: #d6d8dd; // Обводка у элементов
+
+    // STATIC
+    --static-black: #2b313b; // Статичный цвет, при смене темы не меняется
+    --static-white: #ffffff; // Статичный цвет, при смене темы не меняется
+
+    // DISABLE
+    --disable-back: #e5e7eb; // Задник в организмах в состоянии Disable
+    --disable-text: #8d939d; // Текст в состоянии Disable
+
+    // RARE
+    --rare-secondary: #37383c; // Редкое использование 1
+    --rare-tertiary: #74777f; // Редкое использование 2
+
+    // BACKGROUND
+    --background-page-primary: #f1f2f4; // Основной фон у страниц
+    --background-card-primary: #ffffff; // Основной фон у карточек
+    --background-secondary: #e7e9ed; // Фон доп элементов
+    --background-tertiary: #d9dde2; // Фон редких элементов
+    --background-tertiary-hover: #c9cfd7; // Hover фон редких элементов
+    --background-shadow: #8a96a8; // Цвет теней (Не используется)
+
+    // TEXT
+    --text-primary: #2b313b; // Основной текст
+    --text-secondary: #626f84; // Вторичный текст
+    --text-tertiary: #a7b0be; // Доп текст
+    --text-inversion: #ffffff; // Инвертированный текст
+
+    // STATUS YELLOW
+    --status-yellow-warn: #ff8c19;
+    --status-yellow-hover-warn: #e57300;
+    --status-yellow-press-warn: #cc6600;
+    --status-yellow-surface-warn: #fff7f0;
+
+    // STATUS GREEN
+    --status-green-success: #2abb5b;
+    --status-green-hover-success: #219246;
+    --status-green-press-success: #1c7d3c;
+    --status-green-surface-success: #d6fee3;
+
+    // STATUS RED
+    --status-red-danger: #ea3c3c;
+    --status-red-hover-danger: #a90919;
+    --status-red-press-danger: #910815;
+    --status-red-surface-danger: #fae6e7;
+
+    // STATUS BLUE
+    --status-blue-success: #0062ff;
+    --status-blue-hover: #0046e2;
+    --status-blue-click: #0132b0;
+    --status-blue-surface: #edf5ff;
+
+    // STATUS NEUTRAL
+    --neutral-default: #74777f;
+    --neutral-surface: #fcfcfc;
+
+    // BRAND
+    --brand-red: #fd4236;
+    --brand-blue: #005a9c;
+}
+
+[data-theme='dark-theme'] {
+    // PRIMARY
+    --primary-default: #4789eb; // Основные кликабельные элементы, Состояние - Default
+    --primary-hover: #1a6be5; // Основные кликабельные элементы, Состояние - Hover
+    --primary-press: #1760cf; // Основные кликабельные элементы, Состояние - Press/Click
+
+    // PRIMARY LIGHT
+    --primary-light-default: #22334d; // Дополнительные кликабельные элементы, Состояние - Default
+    --primary-light-hover: #315487; // Дополнительные кликабельные элементы, Состояние - Hover
+    --primary-light-click: #19407a; // Дополнительные кликабельные элементы, Состояние - Click
+
+    // ATOMS
+    --atoms-dark-grey: #404752; // Светлый цвет для небольший элементов (иконки, дивайдеры)
+    --atoms-default: #9ca0a7; // Темный цвет для небольший элементов (иконки, дивайдеры)
+    --atoms-stroke: #4d4d4d; // Обводка у элементов
+
+    // STATIC
+    --static-black: #2b313b; // Статичный цвет, при смене темы не меняется
+    --static-white: #ffffff; // Статичный цвет, при смене темы не меняется
+
+    // DISABLE
+    --disable-back: #313742; // Задник в организмах в состоянии Disable
+    --disable-text: #4d5562; // Текст в состоянии Disable
+
+    // RARE
+    --rare-secondary: #e2e5e9; // Редкое использование 1
+    --rare-tertiary: #5e6d83; // Редкое использование 2
+
+    // BACKGROUND
+    --background-page-primary: #161617; // Основной фон у страниц
+    --background-card-primary: #222222; // Основной фон у карточек
+    --background-secondary: #252a32; // Фон доп элементов
+    --background-tertiary: #2b313b; // Фон редких элементов
+    --background-tertiary-hover: #323943; // Hover фон редких элементов
+    --background-shadow: #000000; // Цвет теней (Не используется)
+
+    // TEXT
+    --text-primary: #e2e5e9; // Основной текст
+    --text-secondary: #8a96a8; // Вторичный текст
+    --text-tertiary: #4c5767; // Доп текст
+    --text-inversion: #1a1e23; // Инвертированный текст
+
+    // STATUS YELLOW
+    --status-yellow-warn: #ff9f19;
+    --status-yellow-hover-warn: #e58600;
+    --status-yellow-press-warn: #cc7700;
+    --status-yellow-surface-warn: #322d25;
+
+    // STATUS GREEN
+    --status-green-success: #4ab56e;
+    --status-green-hover-success: #339956;
+    --status-green-press-success: #2d864b;
+    --status-green-surface-success: #1d3345;
+
+    // STATUS RED
+    --status-red-danger: #e04353;
+    --status-red-hover-danger: #cc3342;
+    --status-red-press-danger: #b82e3c;
+    --status-red-surface-danger: #723737;
+
+    // STATUS BLUE
+    --status-blue-success: #4789eb;
+    --status-blue-hover: #1a6be5;
+    --status-blue-click: #1760ce;
+    --status-blue-surface: #1d3345;
+
+    // STATUS NEUTRAL
+    --neutral-default: #4d5562;
+    --neutral-surface: #323232;
+
+    // BRAND
+    --brand-red: #f46158;
+    --brand-blue: #1c7ec6;
+}
