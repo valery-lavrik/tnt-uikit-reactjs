@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { getFromCache, saveToCache } from './cache';
-import { getCookie } from './cookie';
-import { AuthKey } from '../../pages/Auth/helpers';
+// import { getCookie } from './cookie';
+// import { AuthKey } from '../../pages/Auth/helpers';
 
 type SyncStateRequests = { [key: string]: JQuery.jqXHR<any>[] };
 
@@ -72,7 +72,7 @@ function sync() {
 
         options.headers = {
             ...options.headers,
-            Authorization: 'Bearer ' + getCookie(AuthKey, ''),
+            // Authorization: 'Bearer ' + getCookie(AuthKey, ''),
         };
 
         let cacheKey = encodeURIComponent(JSON.stringify(options)).replace(/\./g, '');
