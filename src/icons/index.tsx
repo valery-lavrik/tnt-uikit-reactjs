@@ -33,6 +33,8 @@ import XMarkSmallIcon_ from '../assets/icons/x-mark-small.svg';
 import XMarkIcon_ from '../assets/icons/x-mark.svg';
 import CaretSmallIcon_ from '../assets/icons/caret-small.svg';
 
+// console.log('CaretSmallIcon_', CaretSmallIcon_);
+
 const SvgImg = ({ ...args }) => {
     const { svg, alt = '' } = args;
     delete args.svg;
