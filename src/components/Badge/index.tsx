@@ -8,7 +8,12 @@ export interface BadgeProps {
     style?: React.CSSProperties;
 }
 
-const Badge = ({ children, large = false, status = 'none', style = {} }: BadgeProps) => {
+const Badge = ({
+    children,
+    large = false,
+    status = 'none',
+    style = {}
+}: BadgeProps) => {
     return (
         <span className={`badge badge--${status} ${large ? 'badge--large' : ''}`} style={style}>
             {children}
