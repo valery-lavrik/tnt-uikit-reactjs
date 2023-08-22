@@ -1,0 +1,52 @@
+@import '../../scss/variables.scss';
+
+.select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        position: absolute;
+        top: 0.75rem;
+        left: 1rem;
+        color: var(--text-secondary);
+        font-size: var(--font-size-smallest);
+        pointer-events: none;
+        transition: all 0.2s ease-in-out;
+
+        &--placeholder {
+            top: 50%;
+            left: 1.5rem;
+            transform: translateY(-50%);
+            font-size: var(--font-size-default);
+        }
+    }
+
+    &__element {
+        padding: 2.5rem 1rem 0.75rem;
+        font-size: var(--font-size-default);
+        border: 1px solid var(--background-secondary);
+        border-radius: 1rem;
+        background-color: var(--background-card-primary);
+        color: inherit;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    &__invalid {
+        border: 1px solid var(--status-red-danger);
+
+        &:focus {
+            outline: 1px solid var(--status-red-danger);
+        }
+    }
+
+    &__svg {
+        position: absolute;
+        color: var(--text-primary);
+        right: 1.5rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}

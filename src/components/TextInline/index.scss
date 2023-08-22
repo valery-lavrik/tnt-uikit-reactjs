@@ -1,0 +1,11 @@
+@import '../../scss/variables.scss';
+
+.text-inline {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 1rem;
+
+    &__title {
+        color: var(--text-secondary);
+    }
+}

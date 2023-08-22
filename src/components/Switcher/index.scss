@@ -1,0 +1,55 @@
+@import '../../scss/variables.scss';
+
+.switcher {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 1rem;
+
+    &__label {
+        display: flex;
+        align-items: center;
+        color: var(--text-secondary);
+    }
+
+    &__input {
+        display: flex;
+        align-items: center;
+        text-align: start;
+
+        input[type='checkbox'] {
+            position: relative;
+            width: 4rem;
+            height: 2.2rem;
+            background-color: var(--primary-light-default);
+            outline: none;
+            border-radius: 2rem;
+            border: 1px solid var(--atoms-stroke);
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input:checked[type='checkbox'] {
+            background-color: var(--background-tertiary);
+            transition: all 0.3s ease;
+        }
+
+        input[type='checkbox']::before {
+            content: '';
+            position: absolute;
+            width: 1.6rem;
+            height: 1.6rem;
+            border-radius: 2rem;
+            top: 2px;
+            left: 2px;
+            background-color: var(--status-blue-success);
+            transition: all 0.3s ease;
+        }
+
+        input:checked[type='checkbox']::before {
+            left: 2rem;
+            transition: all 0.3s ease;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@import '../../../scss/variables.scss';
+
+.table-head-item {
+    text-align: start;
+    padding: 2rem;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--background-secondary);
+    font-size: var(--font-size-small);
+    font-weight: normal;
+    color: var(--text-secondary);
+
+    &:first-of-type {
+        text-align: start;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+    }
+
+    &--asc {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &--small {
+        width: 5rem;
+    }
+
+    &--sortable {
+        color: var(--primary-default);
+        user-select: none;
+        cursor: pointer;
+    }
+}

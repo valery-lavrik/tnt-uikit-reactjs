@@ -1,0 +1,84 @@
+@import '../../../scss/variables.scss';
+
+.table {
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        display: flex;
+        padding: 1rem 0;
+        border-radius: 1rem;
+        background-color: var(--background-card-primary);
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    h4 {
+        font-size: var(--font-size-small);
+        margin-bottom: 1rem;
+    }
+
+    table {
+        border-collapse: collapse;
+        font-size: var(--font-size-default);
+        width: 100%;
+
+        td:first-of-type {
+            text-align: start;
+        }
+    }
+
+    &__row {
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--background-secondary);
+        }
+
+        &:hover {
+            background-color: var(--primary-light-default);
+        }
+
+        &--checked {
+            background-color: var(--primary-light-hover);
+
+            &:hover {
+                background-color: var(--primary-light-hover);
+            }
+        }
+    }
+
+    &__cell {
+        padding: 2rem;
+
+        &--action {
+            padding: 0rem;
+
+            &__container {
+                margin-right: 1rem;
+            }
+        }
+    }
+
+    &__dropdown {
+        display: flex;
+        flex-direction: column;
+        min-width: 16rem;
+        border-radius: 0.75rem;
+
+        span {
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--primary-light-default);
+            }
+        }
+
+        &__button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            cursor: pointer;
+        }
+    }
+}

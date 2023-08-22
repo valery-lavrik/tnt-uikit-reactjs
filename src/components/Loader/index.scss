@@ -1,0 +1,80 @@
+@import '../../scss/variables.scss';
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+    }
+    20% {
+        clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%);
+    }
+    30% {
+        clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 50% 100%, 50% 100%);
+    }
+    40% {
+        clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
+    }
+    50% {
+        clip-path: polygon(50% 50%, 50% 0%, 50% 0%, 100% 0%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
+    }
+    60% {
+        clip-path: polygon(50% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 50%, 100% 100%, 50% 100%, 0% 100%, 0% 50%);
+    }
+    70% {
+        clip-path: polygon(50% 50%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 50% 100%, 0% 100%, 0% 50%);
+    }
+    80% {
+        clip-path: polygon(50% 50%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 100%, 0% 50%);
+    }
+    90% {
+        transform: rotate(360deg);
+        clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+    }
+    100% {
+        clip-path: polygon(50% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%, 0% 50%);
+    }
+}
+
+.loader {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-modal);
+    z-index: 100;
+
+    &__container {
+        position: absolute;
+        top: 50%;
+        bottom: 0;
+        right: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        width: 30rem;
+        height: 30rem;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    &__label {
+        margin-top: 1rem;
+        font-size: var(--font-size-medium);
+        font-weight: bold;
+        text-align: center;
+        color: var(--static-white);
+    }
+
+    &__icon {
+        display: inline-block;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        box-sizing: border-box;
+        border: 1rem solid var(--primary-default);
+        clip-path: polygon(50% 50%, 0% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%, 50% 0%);
+        animation: spin 1.6s linear infinite;
+    }
+}

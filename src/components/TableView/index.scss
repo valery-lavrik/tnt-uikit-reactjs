@@ -1,0 +1,12 @@
+@import '../../scss/variables.scss';
+
+.table-view {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+
+    .loader {
+        opacity: 50%;
+    }
+}

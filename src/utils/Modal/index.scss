@@ -1,0 +1,118 @@
+@import '../../scss/variables.scss';
+
+@keyframes appear {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bgAppear {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: var(--background-modal);
+    }
+}
+
+.modal_wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: var(--background-modal);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: bgAppear 0.3s ease;
+    overflow-x: hidden;
+
+    &__box {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        background-color: var(--background-card-primary);
+    }
+
+    &__close {
+        display: none;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.center {
+    .modal_wrapper {
+        &__box {
+            border-radius: 1.5rem;
+            min-width: 56rem;
+        }
+
+        &__close {
+            display: block;
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 3rem;
+
+            h2 {
+                margin-bottom: 1rem;
+            }
+
+            p {
+                color: var(--text-secondary);
+            }
+        }
+    }
+
+    .modal_buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+}
+
+.right {
+    align-items: flex-end;
+
+    .modal_wrapper {
+        &__box {
+            height: 100vh;
+            width: 56rem;
+            animation: appear 0.3s ease;
+        }
+
+        &__content {
+            box-shadow: 0px 4px 50px 0px #0000001a;
+
+            height: 100%;
+        }
+
+        &__close {
+            display: block;
+        }
+
+        &__title {
+            font-size: var(--font-size-large);
+        }
+    }
+}

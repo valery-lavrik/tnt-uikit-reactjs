@@ -3,7 +3,10 @@
     "license": "MIT",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
-    "files": ["dist", "src"],
+    "files": [
+        "dist",
+        "src"
+    ],
     "engines": {
         "node": ">=10"
     },
@@ -76,8 +79,10 @@
         "typescript": "^5.1.6"
     },
     "dependencies": {
+        "@rollup/plugin-image": "^3.0.2",
         "autoprefixer": "^10.4.15",
         "cssnano": "^6.0.1",
+        "jquery": "^3.7.0",
         "rollup-plugin-postcss": "^4.0.2"
     }
 }

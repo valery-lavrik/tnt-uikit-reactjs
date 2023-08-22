@@ -1,0 +1,47 @@
+@import '../../../scss/variables.scss';
+
+.table-filter-item {
+    display: flex;
+    flex-direction: column;
+    min-width: 40rem;
+    border-radius: 0.75rem;
+
+    &__element {
+        display: flex;
+        align-items: center;
+        padding: 1.25rem 1.5rem;
+        gap: 1.25rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--primary-light-default);
+        }
+
+        &--active {
+            background-color: var(--primary-light-hover);
+
+            &:hover {
+                background-color: var(--primary-light-hover);
+            }
+        }
+    }
+
+    &__button {
+        background-color: var(--background-card-primary);
+        padding: 1.25rem 0;
+        border: none;
+        border-top: 1px solid var(--background-secondary);
+        font-size: var(--font-size-normal);
+        font-weight: bold;
+        color: var(--primary-default);
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--primary-light-default);
+        }
+
+        &:active {
+            background-color: var(--primary-light-click);
+        }
+    }
+}
