@@ -105,7 +105,7 @@ export default class BaseNotification extends React.Component<ModalItemPropsType
 
         return (
             <div className="notify">
-                {modals.reverse().map((modal: ModalItemPropsType, key) => {
+                {modals.reverse().map((modal: ModalItemPropsType) => {
                     const { text, title, type, ind } = modal;
 
                     return (

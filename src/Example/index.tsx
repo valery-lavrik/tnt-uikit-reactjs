@@ -242,7 +242,7 @@ const Example = () => {
             <h2 className="test__title">Дропдаун:</h2>
             <div className="test__row">
                 <DropDown
-                    Button={(props) => <Button>Open</Button>}
+                    Button={() => <Button>Open</Button>}
                     Component={() => (
                         <div style={{ width: '200px' }}>
                             <p>Контент в любом формате</p>
