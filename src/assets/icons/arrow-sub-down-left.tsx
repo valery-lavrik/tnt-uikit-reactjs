@@ -1,13 +1,6 @@
 import React from 'react';
-export default function Icon({
-    className = '',
-    style = {},
-    onClick,
-}: {
-    className?: string;
-    style?: React.CSSProperties;
-    onClick?: (...args: any) => void;
-}) {
+import { SvgPropsType } from '../../Types';
+export default function Icon({ className = '', style = {}, onClick }: SvgPropsType) {
     return (
         <svg
             onClick={onClick}

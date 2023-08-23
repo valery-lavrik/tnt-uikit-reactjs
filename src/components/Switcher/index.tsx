@@ -6,14 +6,15 @@ interface Props {
     checked: boolean;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     style?: React.CSSProperties;
+    readOnly?: boolean;
 }
 
-const Switcher = ({ label, checked, onChange, style = {} }: Props) => {
+const Switcher = ({ label, checked, onChange, style = {}, readOnly = false }: Props) => {
     return (
         <div className="switcher" style={style}>
             <span className="switcher__label">{label}:</span>
             <div className="switcher__input">
-                <input type="checkbox" checked={checked} onChange={onChange} />
+                <input readOnly={readOnly} type="checkbox" checked={checked} onChange={onChange} />
             </div>
         </div>
     );

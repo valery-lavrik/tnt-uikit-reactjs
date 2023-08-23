@@ -12,9 +12,10 @@ interface Props {
     invalid?: boolean;
     type?: 'text' | 'password';
     style?: React.CSSProperties;
+    readOnly?: boolean;
 }
 
-const Input = ({ label, id, name, value, onChange, invalid = false, type = 'text', style = {} }: Props) => {
+const Input = ({ label, id, name, value, onChange, invalid = false, type = 'text', style = {}, readOnly = false }: Props) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const onClick = () => setShowPassword((prev) => !prev);
@@ -31,6 +32,7 @@ const Input = ({ label, id, name, value, onChange, invalid = false, type = 'text
                     type={showPassword ? 'text' : 'password'}
                     style={style}
                     placeholder=" "
+                    readOnly={readOnly}
                 />
             ) : (
                 <input
@@ -42,6 +44,7 @@ const Input = ({ label, id, name, value, onChange, invalid = false, type = 'text
                     type="text"
                     style={style}
                     placeholder=" "
+                    readOnly={readOnly}
                 />
             )}
             <label className="input__label">{label}</label>
