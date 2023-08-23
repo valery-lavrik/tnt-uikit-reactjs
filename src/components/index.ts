@@ -14,6 +14,7 @@ export { default as Select } from './Select';
 export { default as ServicesCard } from './ServicesCard';
 export { default as Switcher } from './Switcher';
 export { default as TableView } from './TableView';
+export { default as TableText } from './TableView/TableText';
 export { default as TextInline } from './TextInline';
 export { default as ThemeSwitch, useTheme } from './ThemeSwitch';
 export { default as Title } from './Title';
