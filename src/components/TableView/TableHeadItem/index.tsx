@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDownIcon } from '../../../icons';
+import { ArrowDownSmIcon } from '../../../icons';
 import { DirectionType } from '../types';
 
 import './index.scss';
@@ -20,7 +20,7 @@ const TableHeadItem = ({ sort, title, onClick, sortable }: Props) => {
             onClick={onClick}
         >
             <div className="table-head-item__content">
-                {title} {!!sort && <ArrowDownIcon />}
+                {title} {!!sort && <ArrowDownSmIcon />}
             </div>
         </th>
     );

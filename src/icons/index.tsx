@@ -1,6 +1,5 @@
 import './index.scss';
 
-export { default as ArrowDownIcon } from '../assets/icons/arrow-down';
 export { default as CaretDownMdIcon } from '../assets/icons/caret-down-md';
 export { default as CheckIcon } from '../assets/icons/check';
 export { default as ChevronRightIcon } from '../assets/icons/chevron-right';
@@ -30,3 +29,5 @@ export { default as TrashEmptyIcon } from '../assets/icons/trash-empty';
 export { default as UserGroupIcon } from '../assets/icons/user-group';
 export { default as ArrowDownSmIcon } from '../assets/icons/arrow-down-sm';
 export { default as CloseMdIcon } from '../assets/icons/close-md';
+export { default as PlayIcon } from '../assets/icons/play';
+export { default as StopIcon } from '../assets/icons/stop';
