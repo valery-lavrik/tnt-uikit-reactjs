@@ -1,5 +1,6 @@
 import './index.scss';
 
+export { default as ArrowDownIcon } from '../assets/icons/arrow-down';
 export { default as CaretDownMdIcon } from '../assets/icons/caret-down-md';
 export { default as CheckIcon } from '../assets/icons/check';
 export { default as ChevronRightIcon } from '../assets/icons/chevron-right';
