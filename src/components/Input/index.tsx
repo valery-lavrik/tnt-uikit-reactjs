@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { EyeIcon, EyeClosedIcon } from '../../icons';
+import { House01Icon } from '../../icons';
 
 import './index.scss';
 
@@ -46,7 +46,7 @@ const Input = ({ label, id, name, value, onChange, invalid = false, type = 'text
             )}
             <label className="input__label">{label}</label>
             {type === 'password' &&
-                (showPassword ? <EyeClosedIcon className="input__svg" onClick={onClick} /> : <EyeIcon className="input__svg" onClick={onClick} />)}
+                (showPassword ? <House01Icon className="input__svg" onClick={onClick} /> : <House01Icon className="input__svg" onClick={onClick} />)}
         </div>
     );
 };

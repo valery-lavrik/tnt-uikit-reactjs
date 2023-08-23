@@ -1,0 +1,25 @@
+import React from 'react';
+export default function Icon({
+    className = '',
+    style = {},
+    onClick,
+}: {
+    className?: string;
+    style?: React.CSSProperties;
+    onClick?: (...args: any) => void;
+}) {
+    return (
+        <svg
+            onClick={onClick}
+            className={className}
+            style={style}
+            width="1em"
+            height="1em"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path d="M4 12H20" stroke="black" strokeWidth="2" strokeLinecap="round" />
+        </svg>
+    );
+}

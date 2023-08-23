@@ -9,7 +9,10 @@
  * @example os(5, ['час', 'часа', 'часов']); -> "часов"
  */
 
-const declOfNum = (num: number, expressions: [string, string, string]): string => {
+const declOfNum = (
+    num: number,
+    expressions: [string, string, string]
+): string => {
     let result = '';
     let count = num % 100;
 

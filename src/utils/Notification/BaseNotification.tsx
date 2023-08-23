@@ -1,5 +1,5 @@
 import React from 'react';
-import { XMarkIcon, XMarkSmallIcon, IMarkIcon, CheckMarkIcon } from '../../icons';
+import { CloseSmIcon, House01Icon } from '../../icons';
 
 import './index.scss';
 
@@ -112,22 +112,22 @@ export default class BaseNotification extends React.Component<ModalItemPropsType
                         <div key={ind} className={'notify__item ' + type}>
                             {type === '' && (
                                 <div className="notify__icon">
-                                    <CheckMarkIcon />
+                                    <House01Icon />
                                 </div>
                             )}
                             {type === 'error' && (
                                 <div className="notify__icon notify__icon--error">
-                                    <XMarkSmallIcon />
+                                    <CloseSmIcon />
                                 </div>
                             )}
                             {type === 'info' && (
                                 <div className="notify__icon notify__icon--info">
-                                    <IMarkIcon />
+                                    <House01Icon />
                                 </div>
                             )}
                             <div className="notify__content">
                                 <span className="notify__close" onClick={() => BaseNotification.item.closeModalByInd(ind)}>
-                                    <XMarkIcon style={{ fill: 'black' }} />
+                                    <CloseSmIcon />
                                 </span>
 
                                 {!!title && <h2 className="notify__title">{title}</h2>}

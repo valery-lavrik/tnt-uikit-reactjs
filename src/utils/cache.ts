@@ -6,6 +6,10 @@ export function getFromCache(type: string, default_value: any = false): any {
 }
 
 export function saveToCache(type: string, data: any = false, days: number = 0): void {
+    if (days) {
+        console.log('the days are not realized');
+    }
+
     if (data === false) Storages.localStorage.remove(type);
     else {
         try {

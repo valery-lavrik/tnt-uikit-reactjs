@@ -1,5 +1,5 @@
 import React from 'react';
-import { CaretIcon } from '../../icons';
+import { House01Icon } from '../../icons';
 
 import './index.scss';
 
@@ -21,7 +21,7 @@ const Pagination = ({ pages, page, onPageChange }: Props) => {
         <div className="pagination">
             {!isPageFirst && (
                 <button onClick={() => onPageChange(page - 1)} className="pagination__caret">
-                    <CaretIcon />
+                    <House01Icon />
                 </button>
             )}
             {Array.from({ length: pages }, (_, i) => (
@@ -39,7 +39,7 @@ const Pagination = ({ pages, page, onPageChange }: Props) => {
             ))}
             {!isPageLast && (
                 <button onClick={() => onPageChange(page + 1)} className="pagination__caret">
-                    <CaretIcon />
+                    <House01Icon />
                 </button>
             )}
         </div>

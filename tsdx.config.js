@@ -1,6 +1,7 @@
 const postcss = require('rollup-plugin-postcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
+const url = require('@rollup/plugin-url');
 
 module.exports = {
     rollup(config, options) {
@@ -17,6 +18,8 @@ module.exports = {
                 extract: !!options.writeMeta,
             }),
         );
+
+        config.plugins.unshift(url());
 
         return config;
     },

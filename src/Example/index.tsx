@@ -1,38 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-    ExitIcon,
-    ArrowDownIcon,
-    BuisnessProcessesIcon,
-    CaretSmallIcon,
-    CaretIcon,
-    CheckMarkIcon,
-    CrossIcon,
-    DotsIcon,
-    EyeClosedIcon,
-    EyeIcon,
-    HomeIcon,
-    IMarkIcon,
-    PlayIcon,
-    PlusIcon,
-    RuntimeEnvironmentsIcon,
-    SearchIcon,
-    ServersIcon,
-    ServicesIcon,
-    SettingsIcon,
-    SoftwareIcon,
-    StartBlueIcon,
-    StartsIcon,
-    StopIcon,
-    StrokeIcon,
-    TasksIcon,
-    TrashIcon,
-    TriggersIcon,
-    UsersIcon,
-    WarningIcon,
-    WorksTuzIcon,
-    XMarkSmallIcon,
-    XMarkIcon,
-} from '../icons';
+import { PlusIcon, House01Icon } from '../icons';
 
 import Input from '../components/Input';
 import Select from '../components/Select';
@@ -49,6 +16,9 @@ import Popup from '../components/Popup';
 import Modal from '../utils/Modal';
 import Notification from '../utils/Notification';
 import ThemeSwitch from '../components/ThemeSwitch';
+import CardNews from '../components/CardNews';
+import ServicesCard from '../components/ServicesCard';
+import IconsList from './IconsList';
 
 import './index.scss';
 
@@ -313,7 +283,7 @@ const Example = () => {
             <div className="test__row" style={{ gap: '2rem' }}>
                 <Popup text="Системная" subtext="Бесконечный цикл">
                     <Badge status="error" large>
-                        Ошибка <WarningIcon />
+                        Ошибка <House01Icon />
                     </Badge>
                 </Popup>
                 <Popup text="Поп-ап это обертка" subtext="Которую можно сделать вокруг любого элемента">
@@ -330,41 +300,16 @@ const Example = () => {
             </div>
             <Divider style={{ marginBottom: '2rem' }} />
             <h2 className="test__title">Иконки:</h2>
-            <div className="test__row test__svgs">
-                <ExitIcon />
-                <ArrowDownIcon />
-                <BuisnessProcessesIcon />
-                <CaretSmallIcon />
-                <CaretIcon />
-                <CheckMarkIcon />
-                <CrossIcon />
-                <DotsIcon />
-                <EyeClosedIcon />
-                <EyeIcon />
-                <HomeIcon />
-                <IMarkIcon />
-                <PlayIcon />
-                <PlusIcon />
-                <RuntimeEnvironmentsIcon />
-                <SearchIcon />
-                <ServersIcon />
-                <ServicesIcon />
-                <SettingsIcon />
-                <SoftwareIcon />
-                <StartBlueIcon />
-                <StartsIcon />
-                <StopIcon />
-                <StrokeIcon />
-                <TasksIcon />
-                <TrashIcon />
-                <TriggersIcon />
-                <UsersIcon />
-                <WarningIcon />
-                <WorksTuzIcon />
-                <XMarkSmallIcon />
-                <XMarkIcon />
+            <div className="test__row">
+                <IconsList />
             </div>
 
+            <Divider style={{ marginBottom: '2rem' }} />
+            <h2 className="test__title">Новости:</h2>
+            <CardNews />
+            <Divider style={{ marginBottom: '2rem' }} />
+            <h2 className="test__title">Сервисы:</h2>
+            <ServicesCard />
             <Divider style={{ marginBottom: '2rem' }} />
         </div>
     );

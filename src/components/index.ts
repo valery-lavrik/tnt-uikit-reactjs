@@ -1,6 +1,7 @@
 export { default as Accordion } from './Accordion';
 export { default as Badge } from './Badge';
 export { default as Button } from './Button';
+export { default as CardNews } from './CardNews';
 export { default as Checkbox } from './Checkbox';
 export { default as Divider } from './Divider';
 export { default as DropDown } from './DropDown';
@@ -10,6 +11,7 @@ export { default as Loader } from './Loader';
 export { default as Pagination } from './Pagination';
 export { default as Popup } from './Popup';
 export { default as Select } from './Select';
+export { default as ServicesCard } from './ServicesCard';
 export { default as Switcher } from './Switcher';
 export { default as TableView } from './TableView';
 export { default as TextInline } from './TextInline';

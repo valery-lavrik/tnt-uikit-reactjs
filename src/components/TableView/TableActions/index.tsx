@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SearchIcon, CaretSmallIcon, DotsIcon } from '../../../icons';
+import { SearchMagnifyingGlassIcon, House01Icon, MoreVerticalIcon } from '../../../icons';
 import { FilterChangeType, OneFilterType, OneFilterValueType, SelectFiltersType, TableActionType, TableColumnType, TableDataType } from '../types';
 import useFirstRender from '../../../utils/useFirstRender';
 import _ from 'lodash';
@@ -50,7 +50,7 @@ const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearch
         <div className="table-actions">
             <div className="table-actions__search">
                 <div>
-                    <SearchIcon />
+                    <SearchMagnifyingGlassIcon />
                 </div>
                 <input
                     onChange={(e) => {
@@ -86,7 +86,7 @@ const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearch
                         )}
                         Button={() => (
                             <Button secondary>
-                                <DotsIcon />
+                                <MoreVerticalIcon />
                             </Button>
                         )}
                     />
@@ -103,7 +103,7 @@ const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearch
                                 <div key={`filter-${filter.id}`} className="table-actions__filters__item">
                                     <span>{filter.title}</span>
                                     {!!filtersCollector[filter.id]?.length && <Badge status="dark">{filtersCollector[filter.id].length}</Badge>}
-                                    <CaretSmallIcon />
+                                    <House01Icon />
                                 </div>
                             )}
                             Component={() => (

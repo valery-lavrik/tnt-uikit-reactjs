@@ -4,12 +4,14 @@ import Switcher from '../Switcher';
 
 const CookieThemeConst = 'themeCookie';
 
-const ThemeList = ['light-theme', 'dark-theme'];
-const DefTheme = ThemeList[0];
-(() => document.documentElement.setAttribute('data-theme', getCookie(CookieThemeConst, DefTheme)))();
+const ThemeList = ['light-theme', 'dark-theme'] as const;
+type ThemeType = (typeof ThemeList)[number];
+
+const DefTheme: ThemeType = ThemeList[0];
+(() => document.documentElement.setAttribute('data-theme', useTheme()))();
 
 const ThemeSwitch = () => {
-    const [theme, setTheme] = useState(getCookie(CookieThemeConst, DefTheme));
+    const [theme, setTheme] = useState<ThemeType>(getCookie(CookieThemeConst, DefTheme) as ThemeType);
     const isDark = theme !== DefTheme;
 
     useEffect(() => {
@@ -25,3 +27,8 @@ const ThemeSwitch = () => {
 };
 
 export default ThemeSwitch;
+
+// Хук для получения текущей темы
+export function useTheme(): ThemeType {
+    return getCookie(CookieThemeConst, DefTheme) as ThemeType;
+}

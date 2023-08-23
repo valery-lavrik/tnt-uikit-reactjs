@@ -3,7 +3,7 @@
     "include": [
         "src",
         "types",
-        "./svg.d.ts"
+        "./react-app-env.d.ts"
     ],
     "compilerOptions": {
         "module": "esnext",

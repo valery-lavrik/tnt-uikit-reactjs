@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CaretSmallIcon } from '../../icons';
+import { House01Icon } from '../../icons';
 
 import './index.scss';
 
@@ -16,7 +16,7 @@ const Accordion = ({ children, title }: Props) => {
             <div onClick={() => setOpen((prev) => !prev)} className="accordion__head">
                 <div className="accordion__title">{title}</div>
                 <div className={`accordion__icon ${open ? 'accordion__icon--open' : ''}`}>
-                    <CaretSmallIcon />
+                    <House01Icon />
                 </div>
             </div>
             <div className={`accordion__content ${open ? 'accordion__content--open' : ''}`}>{children}</div>

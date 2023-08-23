@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { DirectionType, TableActionType, TableColumnType, TableDataType } from '../types';
-import { DotsIcon } from '../../../icons';
+import { MoreVerticalIcon } from '../../../icons';
 
 import TableHeadItem from '../TableHeadItem';
 import DropDown from '../../DropDown';
@@ -95,7 +95,7 @@ const Table = ({ data, header, actionItems, multipleItems, onSortChange, onItemC
                                                 )}
                                                 Button={() => (
                                                     <div className="table__dropdown__button">
-                                                        <DotsIcon />
+                                                        <MoreVerticalIcon />
                                                     </div>
                                                 )}
                                             />
