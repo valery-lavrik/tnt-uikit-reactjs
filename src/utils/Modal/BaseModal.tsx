@@ -1,5 +1,5 @@
 import React from 'react';
-import { House01Icon } from '../../icons';
+import { CloseSmIcon } from '../../icons';
 
 import Modal from '.';
 
@@ -106,7 +106,7 @@ export default class BaseModal extends React.Component<OneModatPropsType, OneMod
                 <div key={key} className={'modal_wrapper ' + className}>
                     <div className="modal_wrapper__box">
                         {!!close && (
-                            <House01Icon
+                            <CloseSmIcon
                                 className="modal_wrapper__close"
                                 onClick={() => {
                                     BaseModal.item.closeLastModal();

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { PlusIcon, House01Icon } from '../icons';
+import { PlusIcon, InfoIcon } from '../icons';
 
 import Input from '../components/Input';
 import Select from '../components/Select';
@@ -283,7 +283,7 @@ const Example = () => {
             <div className="test__row" style={{ gap: '2rem' }}>
                 <Popup text="Системная" subtext="Бесконечный цикл">
                     <Badge status="error" large>
-                        Ошибка <House01Icon />
+                        Ошибка <InfoIcon />
                     </Badge>
                 </Popup>
                 <Popup text="Поп-ап это обертка" subtext="Которую можно сделать вокруг любого элемента">

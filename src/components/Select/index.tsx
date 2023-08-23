@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { House01Icon } from '../../icons';
+import { CaretDownMdIcon } from '../../icons';
 
 import './index.scss';
 
@@ -53,7 +53,7 @@ const Select = ({ options, label, id, name, value, defaultValue, onChange, inval
             <label className={`select__label ${isEmpty ? 'select__label--placeholder' : ''}`} htmlFor={id}>
                 {label}
             </label>
-            <House01Icon className="select__svg" />
+            <CaretDownMdIcon className="select__svg" />
         </div>
     );
 };

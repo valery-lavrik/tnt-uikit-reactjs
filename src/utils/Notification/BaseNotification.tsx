@@ -1,5 +1,5 @@
 import React from 'react';
-import { CloseSmIcon, House01Icon } from '../../icons';
+import { CloseSmIcon, LineMIcon, CheckIcon } from '../../icons';
 
 import './index.scss';
 
@@ -112,7 +112,7 @@ export default class BaseNotification extends React.Component<ModalItemPropsType
                         <div key={ind} className={'notify__item ' + type}>
                             {type === '' && (
                                 <div className="notify__icon">
-                                    <House01Icon />
+                                    <CheckIcon />
                                 </div>
                             )}
                             {type === 'error' && (
@@ -122,7 +122,7 @@ export default class BaseNotification extends React.Component<ModalItemPropsType
                             )}
                             {type === 'info' && (
                                 <div className="notify__icon notify__icon--info">
-                                    <House01Icon />
+                                    <LineMIcon />
                                 </div>
                             )}
                             <div className="notify__content">
