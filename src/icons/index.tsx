@@ -28,3 +28,5 @@ export { default as SettingsIcon } from '../assets/icons/settings';
 export { default as TerminalIcon } from '../assets/icons/terminal';
 export { default as TrashEmptyIcon } from '../assets/icons/trash-empty';
 export { default as UserGroupIcon } from '../assets/icons/user-group';
+export { default as ArrowDownSmIcon } from '../assets/icons/arrow-down-sm';
+export { default as CloseMdIcon } from '../assets/icons/close-md';
