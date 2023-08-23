@@ -33,9 +33,5 @@
         font-size: var(--font-size-default);
         color: inherit;
         cursor: pointer;
-
-        &:first-child {
-            transform: scale(-1, 1);
-        }
     }
 }
