@@ -20,4 +20,5 @@ import * as Icons from './icons';
 import * as Utils from './utils';
 import Example from './Example';
 
+export * from './components';
 export { Example, Components, Icons, Utils };
