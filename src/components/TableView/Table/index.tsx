@@ -45,7 +45,7 @@ const Table = ({ data, header, actionItems, multipleItems, onSortChange, onItemC
                     <thead>
                         <tr>
                             <th className="table-head-item table-head-item--small">
-                                <Checkbox checked={multipleItems.length === data.length} onChange={(e) => onCheckAll(e)} />
+                                <Checkbox checked={multipleItems.length === data.length && !!data.length} onChange={(e) => onCheckAll(e)} />
                             </th>
                             {header.map((item) => (
                                 <TableHeadItem

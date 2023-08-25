@@ -57,33 +57,29 @@ const TableView = ({
         <div className="table-view">
             {status === 'load' && <Loader />}
 
-            {!!data.length && (
-                <>
-                    <TableActions
-                        minSearchSize={minSearchSize}
-                        filters={filters}
-                        header={header}
-                        actionItems={actionItemsGroup}
-                        onItemClickAction={onItemClickAction}
-                        multipleItems={multipleItems}
-                        onSearchChange={onSearchChange}
-                        onFilterChange={onFilterChange}
-                    />
+            <TableActions
+                minSearchSize={minSearchSize}
+                filters={filters}
+                header={header}
+                actionItems={actionItemsGroup}
+                onItemClickAction={onItemClickAction}
+                multipleItems={multipleItems}
+                onSearchChange={onSearchChange}
+                onFilterChange={onFilterChange}
+            />
 
-                    <Table
-                        data={data}
-                        header={header}
-                        actionItems={actionItems}
-                        multipleItems={multipleItems}
-                        onSortChange={onSortChange}
-                        onItemClickAction={onItemClickAction}
-                        setMultipleItems={setMultipleItems}
-                        maxFieldLength={maxFieldLength}
-                    />
+            <Table
+                data={data}
+                header={header}
+                actionItems={actionItems}
+                multipleItems={multipleItems}
+                onSortChange={onSortChange}
+                onItemClickAction={onItemClickAction}
+                setMultipleItems={setMultipleItems}
+                maxFieldLength={maxFieldLength}
+            />
 
-                    <Pagination pages={pages} page={page} onPageChange={onPageChange} />
-                </>
-            )}
+            <Pagination pages={pages} page={page} onPageChange={onPageChange} />
         </div>
     );
 };
