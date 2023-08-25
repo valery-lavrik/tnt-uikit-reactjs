@@ -279,8 +279,9 @@ const Example = () => {
                 <DropDown
                     Button={() => <Button>Open</Button>}
                     Component={() => (
-                        <div style={{ width: "200px" }}>
-                            <p>Контент в любом формате</p>
+                        <div style={{ width: "200px", padding: "2rem" }}>
+                            <h3>Контент</h3>
+                            <p>в любом формате</p>
                         </div>
                     )}
                 />
@@ -382,20 +383,25 @@ const Example = () => {
                         Ошибка <InfoIcon />
                     </Badge>
                 </Popup>
-                <Popup
-                    text="Поп-ап это обертка"
-                    subtext="Которую можно сделать вокруг любого элемента"
-                >
-                    <Badge status="success" large>
-                        Успех
-                    </Badge>
-                </Popup>
+                <Badge status="success" large>
+                    Успех
+                </Badge>
                 <Badge status="await" large>
                     Ожидает
                 </Badge>
                 <Badge status="work" large>
                     В работе
                 </Badge>
+            </div>
+            <div className="test__row" style={{ gap: "2rem" }}>
+                <Popup
+                    text="Поп-ап это обертка"
+                    subtext="Которую можно сделать вокруг любого элемента"
+                >
+                    <div className="test__pop-up">
+                        <h4>Наведи на меня - я Поп-ап</h4>
+                    </div>
+                </Popup>
             </div>
             <Divider style={{ marginBottom: "2rem" }} />
             <h2 className="test__title">Иконки:</h2>
