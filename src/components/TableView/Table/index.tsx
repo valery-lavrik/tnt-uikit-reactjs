@@ -76,7 +76,7 @@ const Table = ({ data, header, actionItems, multipleItems, onSortChange, onItemC
                                                     `${Comp}`.length > maxFieldLength ?
                                                         <span title={Comp}>{`${Comp}`.substring(0, maxFieldLength)}...</span>
                                                         :
-                                                        maxFieldLength
+                                                        Comp
                                                 ) :
                                                     <Comp />
                                                 )}
