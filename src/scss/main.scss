@@ -1,19 +1,19 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 @font-face {
-    font-family: 'Noto Sans';
+    font-family: "Noto Sans";
     font-weight: 800;
-    src: url('../assets/fonts/NotoSans-ExtraBold.ttf');
+    src: url("../assets/fonts/NotoSans-ExtraBold.ttf");
 }
 @font-face {
-    font-family: 'Noto Sans';
+    font-family: "Noto Sans";
     font-weight: bold;
-    src: url('../assets/fonts/NotoSans-SemiBold.ttf');
+    src: url("../assets/fonts/NotoSans-SemiBold.ttf");
 }
 @font-face {
-    font-family: 'Noto Sans';
+    font-family: "Noto Sans";
     font-weight: normal;
-    src: url('../assets/fonts/NotoSans-Regular.ttf');
+    src: url("../assets/fonts/NotoSans-Regular.ttf");
 }
 
 *,
@@ -30,7 +30,7 @@ html {
 }
 
 body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: "Noto Sans", sans-serif;
     color: var(--text-primary);
     font-size: var(--font-size-default);
     -webkit-font-smoothing: antialiased;
@@ -38,7 +38,8 @@ body {
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 
 a {

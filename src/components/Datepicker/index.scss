@@ -1,0 +1,24 @@
+.datepicker {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        position: absolute;
+        top: 0.75rem;
+        left: 1rem;
+        color: var(--text-secondary);
+        font-size: var(--font-size-smallest);
+        pointer-events: none;
+    }
+
+    &__element {
+        width: 100%;
+        padding: 2.5rem 1rem 0.75rem;
+        border: 1px solid var(--background-secondary);
+        border-radius: 1rem;
+        font-size: var(--font-size-default);
+        color: inherit;
+        background-color: var(--background-card-primary);
+    }
+}

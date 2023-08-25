@@ -23,6 +23,7 @@ import TableViewExample from "./TableViewExample";
 import TextArea from "../components/TextArea";
 
 import "./index.scss";
+import Datepicker from "../components/Datepicker";
 
 const mockListOfDomains = [
     {
@@ -469,6 +470,13 @@ const ModalRightTestContent = () => {
     const [checkbox, setCheckbox] = useState(initialCheckboxData);
     const [allChecked, setAllChecked] = useState(false);
     const [text, setText] = useState("Отправка писем");
+    const [textArea, setTextArea] = useState("");
+    const [date, setDate] = useState<Date | null>(new Date());
+
+    const minDate = new Date();
+    const maxDate = new Date();
+    minDate.setDate(minDate.getDate() - 7);
+    maxDate.setDate(maxDate.getDate() + 7);
 
     const { last, plan, today } = checkbox;
 
@@ -498,6 +506,11 @@ const ModalRightTestContent = () => {
             return { ...newObj };
         });
     };
+
+    const handleTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
+        setTextArea(e.target.value);
+
+    const handleDatepicker = (date: Date | null) => setDate(date);
 
     return (
         <div
@@ -586,7 +599,20 @@ const ModalRightTestContent = () => {
                     />
                 </Accordion>
                 <Divider />
-                <TextArea label="Введите сообщение..." rows={4} />
+                <TextArea
+                    value={textArea}
+                    onChange={handleTextArea}
+                    label="Введите сообщение..."
+                    rows={4}
+                />
+                <Divider />
+                <Datepicker
+                    label="Ближайший запуск"
+                    selected={date}
+                    onChange={handleDatepicker}
+                    minDate={minDate}
+                    maxDate={maxDate}
+                />
                 <Divider />
             </div>
 
