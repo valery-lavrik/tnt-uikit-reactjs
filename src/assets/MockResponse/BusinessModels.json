@@ -53,8 +53,8 @@
     ],
     "info": {
         "filters": [
-            { "id": "analyst_id", "values": [{ "count": 5, "title": null }] },
-            { "id": "client_id", "values": [{ "count": 5, "title": null }] }
+            { "id": "analyst_id", "values": [{ "count": 5, "title": "Наименование" }] },
+            { "id": "client_id", "values": [{ "count": 5, "title": "Версия" }] }
         ],
         "headers": [
             { "hasSort": true, "id": "id", "title": "\u041d\u043e\u043c\u0435\u0440 \u0432 \u0411\u0414" },
