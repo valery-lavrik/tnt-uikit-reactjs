@@ -1,12 +1,12 @@
-import React from 'react';
-import { CloseSmIcon, LineMIcon, CheckIcon } from '../../icons';
+import React from "react";
+import { CloseSmIcon, LineMIcon, CheckIcon } from "../../icons";
 
-import './index.scss';
+import "./index.scss";
 
 export type ModalItemPropsType = {
     title?: string;
     text?: string;
-    type?: '' | 'error' | 'info';
+    type?: "" | "error" | "info";
     ind?: number;
 };
 
@@ -15,15 +15,18 @@ type ModalItemStateType = {
 };
 
 const MODAL_INITIAL: ModalItemPropsType = {
-    title: '',
-    text: '',
-    type: '',
+    title: "",
+    text: "",
+    type: "",
 };
 
 const timeOutDescriptions: { [key: number]: NodeJS.Timeout } = {};
 
 // Не делать PureComponent! При изменении количества модалок в массиве компонент не перерендеривается
-export default class BaseNotification extends React.Component<ModalItemPropsType, ModalItemStateType> {
+export default class BaseNotification extends React.Component<
+    ModalItemPropsType,
+    ModalItemStateType
+> {
     static item: any;
 
     constructor(props: ModalItemPropsType) {
@@ -32,7 +35,12 @@ export default class BaseNotification extends React.Component<ModalItemPropsType
         BaseNotification.item = this;
     }
 
-    static update(title: string, text: string, type: ModalItemPropsType['type'] = '', showTime = null) {
+    static update(
+        title: string,
+        text: string,
+        type: ModalItemPropsType["type"] = "",
+        showTime = null
+    ) {
         const { modals } = BaseNotification.item.state;
 
         modals.push({
@@ -109,28 +117,37 @@ export default class BaseNotification extends React.Component<ModalItemPropsType
                     const { text, title, type, ind } = modal;
 
                     return (
-                        <div key={ind} className={'notify__item ' + type}>
-                            {type === '' && (
+                        <div key={ind} className={"notify__item " + type}>
+                            {type === "" && (
                                 <div className="notify__icon">
                                     <CheckIcon />
                                 </div>
                             )}
-                            {type === 'error' && (
+                            {type === "error" && (
                                 <div className="notify__icon notify__icon--error">
                                     <CloseSmIcon />
                                 </div>
                             )}
-                            {type === 'info' && (
+                            {type === "info" && (
                                 <div className="notify__icon notify__icon--info">
                                     <LineMIcon />
                                 </div>
                             )}
                             <div className="notify__content">
-                                <span className="notify__close" onClick={() => BaseNotification.item.closeModalByInd(ind)}>
+                                <span
+                                    className="notify__close"
+                                    onClick={() =>
+                                        BaseNotification.item.closeModalByInd(
+                                            ind
+                                        )
+                                    }
+                                >
                                     <CloseSmIcon />
                                 </span>
 
-                                {!!title && <h2 className="notify__title">{title}</h2>}
+                                {!!title && (
+                                    <h2 className="notify__title">{title}</h2>
+                                )}
                                 {!!text && <p>{text}</p>}
                             </div>
                         </div>
