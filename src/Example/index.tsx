@@ -19,6 +19,7 @@ import ThemeSwitch from '../components/ThemeSwitch';
 import CardNews from '../components/CardNews';
 import ServicesCard from '../components/ServicesCard';
 import IconsList from './IconsList';
+import TableViewExample from './TableViewExample';
 
 import './index.scss';
 
@@ -311,6 +312,8 @@ const Example = () => {
             <h2 className="test__title">Сервисы:</h2>
             <ServicesCard />
             <Divider style={{ marginBottom: '2rem' }} />
+
+            <TableViewExample />
         </div>
     );
 };

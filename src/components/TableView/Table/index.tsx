@@ -16,9 +16,10 @@ interface Props {
     onSortChange: (val: string, direction: DirectionType) => void;
     onItemClickAction: (item: TableDataType, action: TableActionType) => void;
     setMultipleItems: React.Dispatch<React.SetStateAction<TableDataType[]>>;
+    maxFieldLength: number,
 }
 
-const Table = ({ data, header, actionItems, multipleItems, onSortChange, onItemClickAction, setMultipleItems }: Props) => {
+const Table = ({ data, header, actionItems, multipleItems, onSortChange, onItemClickAction, setMultipleItems, maxFieldLength }: Props) => {
     const [sort, setSort] = useState<{ [key: string]: DirectionType }>({});
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>, item: TableDataType) => {
@@ -55,7 +56,7 @@ const Table = ({ data, header, actionItems, multipleItems, onSortChange, onItemC
                                     onClick={() => onSortClick(item)}
                                 />
                             ))}
-                            <TableHeadItem sort={''} title={''} onClick={() => {}} />
+                            <TableHeadItem sort={''} title={''} onClick={() => { }} />
                         </tr>
                     </thead>
                     <tbody>
@@ -71,7 +72,14 @@ const Table = ({ data, header, actionItems, multipleItems, onSortChange, onItemC
 
                                         return (
                                             <td key={'tr' + index} className="table__cell">
-                                                {!!Comp && (typeof Comp === 'string' ? Comp : <Comp />)}
+                                                {!!Comp && (['string', 'number'].includes(typeof Comp) ? (
+                                                    `${Comp}`.length > maxFieldLength ?
+                                                        <span title={Comp}>{`${Comp}`.substring(0, maxFieldLength)}...</span>
+                                                        :
+                                                        maxFieldLength
+                                                ) :
+                                                    <Comp />
+                                                )}
                                             </td>
                                         );
                                     })}

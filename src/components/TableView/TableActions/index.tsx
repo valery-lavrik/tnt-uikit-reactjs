@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SearchMagnifyingGlassIcon, CaretDownMdIcon, MoreVerticalIcon } from '../../../icons';
 import { FilterChangeType, OneFilterType, OneFilterValueType, SelectFiltersType, TableActionType, TableColumnType, TableDataType } from '../types';
 import useFirstRender from '../../../utils/useFirstRender';
@@ -15,7 +15,6 @@ interface Props {
     filters: OneFilterType[];
     minSearchSize: number;
     header: TableColumnType[];
-    data: TableDataType[];
     actionItems: TableActionType[];
     multipleItems: TableDataType[];
     onSearchChange: (val: string) => void;

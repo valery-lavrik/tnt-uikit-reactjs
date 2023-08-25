@@ -24,6 +24,7 @@ interface Props {
     actionItemsGroup: TableActionType[];
     header: TableColumnType[];
     data: TableDataType[];
+    maxFieldLength?: number,
 }
 
 const TableView = ({
@@ -41,6 +42,7 @@ const TableView = ({
     actionItemsGroup,
     header,
     data,
+    maxFieldLength = 10,
 }: Props) => {
     const [multipleItems, setMultipleItems] = useState<TableDataType[]>([]);
     const pages = Math.ceil(data.length / pageSize);
@@ -58,7 +60,6 @@ const TableView = ({
             {!!data.length && (
                 <>
                     <TableActions
-                        data={data}
                         minSearchSize={minSearchSize}
                         filters={filters}
                         header={header}
@@ -77,6 +78,7 @@ const TableView = ({
                         onSortChange={onSortChange}
                         onItemClickAction={onItemClickAction}
                         setMultipleItems={setMultipleItems}
+                        maxFieldLength={maxFieldLength}
                     />
 
                     <Pagination pages={pages} page={page} onPageChange={onPageChange} />
