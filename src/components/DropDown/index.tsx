@@ -1,7 +1,6 @@
-import React from 'react';
-import { useState, useRef } from 'react';
+import { useState, useRef } from "react";
 
-import './index.scss';
+import "./index.scss";
 
 type DropDownPropsType = {
     Button: (props: any) => JSX.Element;
@@ -14,8 +13,8 @@ export default function DropDown({ Button, Component }: DropDownPropsType) {
 
     const handleDropdownClick = () => {
         if (!dropdownState) {
-            document.addEventListener('click', handleClickOutside);
-            document.addEventListener('keydown', handleEscClick);
+            document.addEventListener("click", handleClickOutside);
+            document.addEventListener("keydown", handleEscClick);
             setDropdownState(!dropdownState);
         } else {
             close();
@@ -23,17 +22,18 @@ export default function DropDown({ Button, Component }: DropDownPropsType) {
     };
 
     const close = () => {
-        document.removeEventListener('click', handleClickOutside);
-        document.removeEventListener('keydown', handleEscClick);
+        document.removeEventListener("click", handleClickOutside);
+        document.removeEventListener("keydown", handleEscClick);
         setDropdownState(false);
     };
 
     const handleClickOutside = (e: MouseEvent) => {
-        if (container.current && !container.current.contains(e.target as Node)) close();
+        if (container.current && !container.current.contains(e.target as Node))
+            close();
     };
 
     const handleEscClick = (e: KeyboardEvent) => {
-        if (e.code === 'Escape') close();
+        if (e.code === "Escape") close();
     };
 
     return (
