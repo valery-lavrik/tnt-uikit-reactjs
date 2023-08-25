@@ -22,7 +22,7 @@ interface Props {
     onItemClickAction: (item: TableDataType, action: TableActionType) => void;
 }
 
-const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearchChange, onFilterChange, actionItems, onItemClickAction }: Props) => {
+const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearchChange, onFilterChange, actionItems, onItemClickAction, header }: Props) => {
     const [filtersCollector, setFiltersCollector] = useState<SelectFiltersType>({});
     const onSearchChangeDebounced = _.debounce(onSearchChange, 700);
     const isFirst = useFirstRender();
@@ -100,7 +100,7 @@ const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearch
                             key={`${filter.id}-filter`}
                             Button={() => (
                                 <div key={`filter-${filter.id}`} className="table-actions__filters__item">
-                                    <span>{filter.title}</span>
+                                    <span>{header?.find(a => a.id === filter.id)?.title || 'Не задано'}</span>
                                     {!!filtersCollector[filter.id]?.length && <Badge status="dark">{filtersCollector[filter.id].length}</Badge>}
                                     <CaretDownMdIcon />
                                 </div>
