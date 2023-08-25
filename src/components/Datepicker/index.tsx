@@ -14,6 +14,7 @@ interface Props {
     style?: React.CSSProperties;
     className?: string;
     readOnly?: boolean;
+    dateFormat?: string,
 }
 
 const DatepickerComp = ({
@@ -27,6 +28,7 @@ const DatepickerComp = ({
     style = {},
     className = "",
     readOnly = false,
+    dateFormat = 'dd.MM.yyyy',
 }: Props) => {
     return (
         <div className="datepicker" style={style}>
@@ -39,6 +41,7 @@ const DatepickerComp = ({
                 id={id}
                 minDate={minDate}
                 maxDate={maxDate}
+                dateFormat={dateFormat}
             />
             <label className="datepicker__label">{label}</label>
         </div>
