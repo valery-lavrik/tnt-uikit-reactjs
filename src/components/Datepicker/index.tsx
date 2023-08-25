@@ -15,6 +15,7 @@ interface Props {
     className?: string;
     readOnly?: boolean;
     dateFormat?: string,
+    timeFormat?: string,
     showTimeSelect?: boolean,
 }
 
@@ -29,7 +30,8 @@ const DatepickerComp = ({
     style = {},
     className = "",
     readOnly = false,
-    dateFormat = 'dd.MM.yyyy',
+    dateFormat = 'yyyy.MM.dd',
+    timeFormat = "HH:mm",
     showTimeSelect = false,
 }: Props) => {
     return (
@@ -44,6 +46,7 @@ const DatepickerComp = ({
                 minDate={minDate}
                 maxDate={maxDate}
                 dateFormat={dateFormat}
+                timeFormat={timeFormat}
                 showTimeSelect={showTimeSelect}
             />
             <label className="datepicker__label">{label}</label>
