@@ -16,7 +16,7 @@ interface Props {
     readOnly?: boolean;
 }
 
-const Datepicker = ({
+const DatepickerComp = ({
     label,
     id,
     name,
@@ -34,7 +34,7 @@ const Datepicker = ({
                 readOnly={readOnly}
                 className={`datepicker__element ${className}`}
                 selected={selected}
-                onChange={(date) => onChange(date)}
+                onChange={(date: Date | null) => onChange(date)}
                 name={name}
                 id={id}
                 minDate={minDate}
@@ -45,4 +45,4 @@ const Datepicker = ({
     );
 };
 
-export default Datepicker;
+export default DatepickerComp;
