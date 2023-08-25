@@ -1,4 +1,4 @@
-@import '../../../scss/variables.scss';
+@import "../../../scss/variables.scss";
 
 .table {
     display: flex;
@@ -78,7 +78,18 @@
             align-items: center;
             justify-content: center;
             padding: 1rem 2rem;
+            border-radius: 1rem;
             cursor: pointer;
+
+            &:hover {
+                background-color: var(--primary-light-hover);
+            }
+        }
+    }
+
+    &__row--checked &__dropdown__button:hover {
+        &:hover {
+            background-color: var(--primary-light-default);
         }
     }
 }
