@@ -1,4 +1,4 @@
-@import '../../scss/variables.scss';
+@import "../../scss/variables.scss";
 
 @keyframes appearNotify {
     0% {
@@ -37,7 +37,10 @@
         justify-content: center;
         border-radius: 50%;
         background-color: var(--primary-default);
-        color: var(--static-white);
+
+        svg {
+            color: var(--static-white);
+        }
 
         &--error {
             background-color: var(--status-red-danger);
