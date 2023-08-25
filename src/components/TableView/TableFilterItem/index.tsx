@@ -15,7 +15,7 @@ interface Props {
 
 const TableFilterItem = ({ filter, onFilterChange, initial = [] }: Props) => {
     const [values, setValues] = useState<OneFilterValueType[]>(initial);
-    const allChecked = filter.values.length === values.length;
+    const allChecked = filter.values.length === values.length && !!values.length;
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>, itemField: OneFilterValueType) => {
         setValues((prev) => (e.target.checked ? [...prev, itemField] : [...prev.filter((a) => a.title !== itemField.title)]));
