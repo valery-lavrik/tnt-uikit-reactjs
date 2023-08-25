@@ -1,0 +1,56 @@
+.text-area {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        position: absolute;
+        top: 0.75rem;
+        left: 1rem;
+        color: var(--text-secondary);
+        font-size: var(--font-size-smallest);
+        pointer-events: none;
+        transition: all 0.2s ease-in-out;
+    }
+
+    &__element {
+        padding: 2.5rem 1rem 0.75rem;
+        border: 1px solid var(--background-secondary);
+        border-radius: 1rem;
+        font-size: var(--font-size-default);
+        color: inherit;
+        background-color: var(--background-card-primary);
+        resize: none;
+
+        &:not(:focus) ~ label {
+            top: 50%;
+            left: 1.5rem;
+            transform: translateY(-50%);
+            font-size: var(--font-size-default);
+        }
+
+        &:not(:placeholder-shown) ~ label {
+            top: 0.75rem;
+            left: 1rem;
+            transform: translateY(0);
+            font-size: var(--font-size-smallest);
+        }
+    }
+
+    &__svg {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        color: var(--primary-default);
+        cursor: pointer;
+    }
+
+    &__invalid {
+        border: 1px solid var(--status-red-danger);
+
+        &:focus {
+            outline: 1px solid var(--status-red-danger);
+        }
+    }
+}
