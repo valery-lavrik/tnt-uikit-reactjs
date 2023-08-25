@@ -29,7 +29,7 @@ const TableFilterItem = ({ filter, onFilterChange, initial = [] }: Props) => {
         <div className="table-filter-item">
             <label className={`table-filter-item__element ${allChecked ? 'table-filter-item__element--active' : ''}`}>
                 <Checkbox checked={allChecked} onChange={(e) => onCheckAll(e)} /> <span>Все</span>
-                <Badge style={{ marginLeft: 'auto' }}>{filter.values.length}</Badge>
+                {/* <Badge style={{ marginLeft: 'auto' }}>{filter.values.length}</Badge> */}
             </label>
             {filter.values.map((item, i) => (
                 <label
