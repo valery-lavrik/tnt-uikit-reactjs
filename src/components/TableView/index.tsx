@@ -25,6 +25,7 @@ interface Props {
     header: TableColumnType[];
     data: TableDataType[];
     maxFieldLength?: number,
+    tdGen?: (a: TableColumnType, b: any) => any,
 }
 
 const TableView = ({
@@ -43,6 +44,7 @@ const TableView = ({
     header,
     data,
     maxFieldLength = 10,
+    tdGen = () => null,
 }: Props) => {
     const [multipleItems, setMultipleItems] = useState<TableDataType[]>([]);
     const pages = Math.ceil(data.length / pageSize);
@@ -77,6 +79,7 @@ const TableView = ({
                 onItemClickAction={onItemClickAction}
                 setMultipleItems={setMultipleItems}
                 maxFieldLength={maxFieldLength}
+                tdGen={tdGen}
             />
 
             <Pagination pages={pages} page={page} onPageChange={onPageChange} />

@@ -17,9 +17,20 @@ interface Props {
     onItemClickAction: (item: TableDataType, action: TableActionType) => void;
     setMultipleItems: React.Dispatch<React.SetStateAction<TableDataType[]>>;
     maxFieldLength: number,
+    tdGen?: (col: TableColumnType, data: any) => any,
 }
 
-const Table = ({ data, header, actionItems, multipleItems, onSortChange, onItemClickAction, setMultipleItems, maxFieldLength }: Props) => {
+const Table = ({
+    data,
+    header,
+    actionItems,
+    multipleItems,
+    onSortChange,
+    onItemClickAction,
+    setMultipleItems,
+    maxFieldLength,
+    tdGen = () => null,
+}: Props) => {
     const [sort, setSort] = useState<{ [key: string]: DirectionType }>({});
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>, item: TableDataType) => {
@@ -68,7 +79,8 @@ const Table = ({ data, header, actionItems, multipleItems, onSortChange, onItemC
                                         <Checkbox checked={checked} onChange={(e) => onChange(e, row)} />
                                     </td>
                                     {header.map((col, index) => {
-                                        const Comp = row[col.id];
+                                        const tdGenComp = tdGen(col, row[col.id]);
+                                        const Comp = tdGenComp !== null ? tdGenComp : row[col.id];
 
                                         return (
                                             <td key={'tr' + index} className="table__cell">

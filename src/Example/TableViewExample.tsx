@@ -29,6 +29,18 @@ const actionsGroup: TableActionType[] = [
 
 
 const TableViewExample = () => {
+
+    // модифицировать контент колонок будем так:
+    const tdGenHandler = (col: any, data: any) => {
+        // console.log('col, data', col, data);
+
+        if (col.id === 'name') {
+            return () => <p style={{ color: 'red' }}>{data}</p>
+        }
+
+        return null
+    }
+
     return (
         <div className="">
 
@@ -49,6 +61,7 @@ const TableViewExample = () => {
                 header={data?.info?.headers || []}
                 data={data?.data || []}
                 maxFieldLength={50}
+                tdGen={tdGenHandler}
             />
 
         </div>
