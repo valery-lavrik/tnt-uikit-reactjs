@@ -29,13 +29,17 @@ const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearch
 
     useEffect(() => {
         if (!isFirst) {
-            const filter_: FilterChangeType[] = [];
+            let filter_: FilterChangeType[] = [];
             for (const key in filtersCollector) {
                 filter_.push({
                     id: key,
                     values: filtersCollector[key].map((a) => a.title),
                 });
             }
+
+            // пыстые фильтры уберу
+            filter_ = filter_.filter(a => a?.values?.length);
+
             onFilterChange(filter_);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -53,7 +57,7 @@ const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearch
                 </div>
                 <input
                     onChange={(e) => {
-                        if (e.target.value.length >= minSearchSize) {
+                        if (e.target.value.length >= minSearchSize || e.target.value.length === 0) {
                             onSearchChangeDebounced(e.target.value);
                         }
                     }}
