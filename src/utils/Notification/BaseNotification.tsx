@@ -59,7 +59,7 @@ export default class BaseNotification extends React.Component<
 
         timeOutDescriptions[ind] = setTimeout(() => {
             BaseNotification.item.closeModalByInd(ind);
-        }, showTime || 5000);
+        }, showTime || 7000);
     }
 
     // получить последнюю модалку

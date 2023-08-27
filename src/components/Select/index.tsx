@@ -6,7 +6,7 @@ import './index.scss';
 interface Props {
     options: {
         label: string;
-        value: string;
+        value: string | number;
     }[];
     label: string;
     id: string;
