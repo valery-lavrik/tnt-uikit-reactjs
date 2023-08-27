@@ -38,7 +38,7 @@ const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearch
             }
 
             // пыстые фильтры уберу
-            filter_ = filter_.filter(a => a?.values?.length);
+            filter_ = filter_.filter(a => !!a?.values?.length);
 
             onFilterChange(filter_);
         }
