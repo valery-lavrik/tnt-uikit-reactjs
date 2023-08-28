@@ -1,5 +1,5 @@
-import React from 'react';
-import './index.scss';
+import React from "react";
+import "./index.scss";
 
 interface Props {
     checked: boolean;
@@ -10,10 +10,23 @@ interface Props {
     readOnly?: boolean;
 }
 
-const Checkbox = ({ checked, onChange, label, id, style = {}, readOnly = false }: Props) => {
+const Checkbox = ({
+    checked,
+    onChange,
+    label,
+    id,
+    style = {},
+    readOnly = false,
+}: Props) => {
     return (
         <label className="sidebar-checkbox" style={style}>
-            <input id={id} checked={checked} onChange={onChange} type="checkbox" readOnly={readOnly} />
+            <input
+                id={id}
+                checked={checked}
+                onChange={onChange}
+                type="checkbox"
+                readOnly={readOnly}
+            />
             {label && <span>{label}</span>}
         </label>
     );

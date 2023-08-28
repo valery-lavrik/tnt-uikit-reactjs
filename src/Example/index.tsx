@@ -57,6 +57,7 @@ const Example = () => {
     const [checked, setChecked] = useState(false);
     const [checkbox, setCheckbox] = useState(false);
     const [checkbox2, setCheckbox2] = useState(false);
+    const [textArea, setTextArea] = useState("");
     const { firstInput, secondInput, thirdInput } = formData;
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
@@ -77,6 +78,9 @@ const Example = () => {
     const onCheckboxChange2 = (e: React.ChangeEvent<HTMLInputElement>) =>
         setCheckbox2(e.target.checked);
 
+    const onTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
+        setTextArea(e.target.value);
+
     return (
         <div className="test">
             <h2 className="test__title">Инпуты:</h2>
@@ -86,7 +90,6 @@ const Example = () => {
                     label="Домен"
                     id="test-domen"
                     options={mockListOfDomains}
-                    invalid={false}
                 />
                 <Input
                     label="Логин"
@@ -105,8 +108,8 @@ const Example = () => {
                     id="secondInput"
                     value={secondInput}
                     onChange={onChange}
-                    invalid={true}
                     name="secondInput"
+                    invalid={"Красный текст ошибки!"}
                 />
                 <Input
                     label="Пароль"
@@ -131,6 +134,15 @@ const Example = () => {
                 />
                 <Checkbox checked={checkbox2} onChange={onCheckboxChange2} />
                 <ThemeSwitch />
+            </div>
+            <div className="test__row" style={{ gap: "3rem" }}>
+                <TextArea
+                    value={textArea}
+                    onChange={onTextAreaChange}
+                    label="Введите сообщение..."
+                    rows={4}
+                    invalid={textArea.length < 1 ? "Напечатай текст!" : false}
+                />
             </div>
             <Divider style={{ marginBottom: "2rem" }} />
             <h2 className="test__title">Кнопки:</h2>
