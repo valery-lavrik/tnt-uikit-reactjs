@@ -75,19 +75,19 @@ const Table = ({
                                 const custonHeader = customHeader(index);
 
                                 return ([
-                                    !!custonHeader && <TableHeadItem
-                                        key={`${custonHeader.id}-th`}
-                                        sortable={custonHeader.hasSort}
-                                        sort={sort?.[custonHeader.id] || ''}
-                                        title={custonHeader.title}
-                                        onClick={() => onSortClick(custonHeader)}
-                                    />,
                                     <TableHeadItem
                                         key={`${item.id}-th`}
                                         sortable={item.hasSort}
                                         sort={sort?.[item.id] || ''}
                                         title={item.title}
                                         onClick={() => onSortClick(item)}
+                                    />,
+                                    !!custonHeader && <TableHeadItem
+                                        key={`${custonHeader.id}-th`}
+                                        sortable={custonHeader.hasSort}
+                                        sort={sort?.[custonHeader.id] || ''}
+                                        title={custonHeader.title}
+                                        onClick={() => onSortClick(custonHeader)}
                                     />
                                 ]);
                             })}
@@ -113,14 +113,14 @@ const Table = ({
                                         }
 
                                         return ([
+                                            <td key={'tr' + col.id} className="table__cell">
+                                                {tdGenerator(Comp)}
+                                            </td>,
                                             !!custonHeader && (
                                                 <td key={'tr' + custonHeader.id} className="table__cell">
                                                     {tdGenerator(CustomTd)}
                                                 </td>
-                                            ),
-                                            <td key={'tr' + col.id} className="table__cell">
-                                                {tdGenerator(Comp)}
-                                            </td>
+                                            )
                                         ]);
                                     })}
                                     <td className="table__cell table__cell--action">
