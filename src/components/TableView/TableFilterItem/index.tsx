@@ -37,7 +37,17 @@ const TableFilterItem = ({ filter, onFilterChange, initial = [] }: Props) => {
                     key={`${item.title}-filter-${i}`}
                 >
                     <Checkbox checked={isChecked(item)} onChange={(e) => onChange(e, item)} />
-                    <span>{item.title || 'Нет значения'}</span>
+                    <span>
+                        {item.title === false ? (
+                            'Нет'
+                        ) : (
+                            item.title === true ? (
+                                'Да'
+                            ) : (
+                                item.title || 'Нет значения'
+                            )
+                        )}
+                    </span>
                     <Badge style={{ marginLeft: 'auto' }}>{item.count}</Badge>
                 </label>
             ))}

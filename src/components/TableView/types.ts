@@ -22,7 +22,7 @@ export type OneFilterType = {
 };
 
 export type OneFilterValueType = {
-    title: string;
+    title: string | boolean | null;
     count: number;
 };
 
@@ -32,5 +32,5 @@ export type SelectFiltersType = {
 
 export type FilterChangeType = {
     id: string;
-    values: (string | null)[];
+    values: (string | boolean | null)[];
 };
