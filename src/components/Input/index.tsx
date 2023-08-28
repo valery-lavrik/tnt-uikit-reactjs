@@ -23,31 +23,17 @@ const Input = ({ label, id, name, value, onChange, invalid = false, type = 'text
     return (
         <div className="input__container">
             <div className="input">
-                {type === 'password' ? (
-                    <input
-                        className={`input__element ${invalid ? 'input__invalid' : ''}`}
-                        value={value}
-                        onChange={onChange}
-                        id={id}
-                        name={name}
-                        type={showPassword ? 'text' : 'password'}
-                        style={style}
-                        placeholder=" "
-                        readOnly={readOnly}
-                    />
-                ) : (
-                    <input
-                        className={`input__element ${invalid ? 'input__invalid' : ''}`}
-                        value={value}
-                        onChange={onChange}
-                        id={id}
-                        name={name}
-                        type="text"
-                        style={style}
-                        placeholder=" "
-                        readOnly={readOnly}
-                    />
-                )}
+                <input
+                    className={`input__element ${invalid ? 'input__invalid' : ''}`}
+                    value={value}
+                    onChange={onChange}
+                    id={id}
+                    name={name}
+                    type={!showPassword ? type : 'text'}
+                    style={style}
+                    placeholder=" "
+                    readOnly={readOnly}
+                />
                 <label className="input__label">{label}</label>
                 {type === 'password' &&
                     (showPassword ? <ShowIcon className="input__svg" onClick={onClick} /> : <HideIcon className="input__svg" onClick={onClick} />)}

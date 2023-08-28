@@ -64,10 +64,9 @@ const Example = () => {
 
     const defaultDateTime = () => {
         const date = new Date();
-        date.setDate(date.getDate());
         return dateFormatter(date, true);
     };
-    const [dateTime, setDateTime] = useState<string | number | undefined>(defaultDateTime);
+    const [dateTime, setDateTime] = useState<string | number | undefined>(defaultDateTime());
 
     const minDate = () => {
         const date = new Date();
@@ -122,7 +121,7 @@ const Example = () => {
             </div>
             <div className="test__row" style={{ gap: '3rem' }}>
                 <Switcher label="Свитчер" checked={checked} onChange={onSwitchChange} />
-                <Checkbox label="Чекбокс" checked={checkbox} onChange={onCheckboxChange} />
+                <Checkbox invalid={!checkbox && 'Нужен чек!'} label="Чекбокс" checked={checkbox} onChange={onCheckboxChange} />
                 <Checkbox checked={checkbox2} onChange={onCheckboxChange2} />
                 <ThemeSwitch />
             </div>
