@@ -15,7 +15,18 @@ const Checkbox = ({ checked, onChange, label, id, style = {}, invalid = false, r
     return (
         <div className="checkbox__container">
             <label className="checkbox" style={style}>
-                <input className="checkbox__element" id={id} checked={checked} onChange={onChange} type="checkbox" readOnly={readOnly} />
+                <input
+                    className="checkbox__element"
+                    id={id}
+                    checked={checked}
+                    onChange={(e) => {
+                        if (!readOnly) {
+                            onChange(e);
+                        }
+                    }}
+                    type="checkbox"
+                    readOnly={readOnly}
+                />
                 {label && <span>{label}</span>}
             </label>
             {invalid && typeof invalid === 'string' && (

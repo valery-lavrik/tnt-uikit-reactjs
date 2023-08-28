@@ -14,7 +14,16 @@ const Switcher = ({ label, checked, onChange, style = {}, readOnly = false }: Pr
         <div className="switcher" style={style}>
             <span className="switcher__label">{label}:</span>
             <div className="switcher__input">
-                <input readOnly={readOnly} type="checkbox" checked={checked} onChange={onChange} />
+                <input
+                    readOnly={readOnly}
+                    type="checkbox"
+                    checked={checked}
+                    onChange={(e) => {
+                        if (!readOnly) {
+                            onChange(e);
+                        }
+                    }}
+                />
             </div>
         </div>
     );
