@@ -54,7 +54,8 @@
     "info": {
         "filters": [
             { "id": "analyst_id", "values": [{ "count": 5, "title": "Наименование" }] },
-            { "id": "client_id", "values": [{ "count": 5, "title": "Версия" }] }
+            { "id": "client_id", "values": [{ "count": 5, "title": "Версия" }] },
+            { "id": "version", "values": [{ "count": 1, "title": true }, { "count": 1, "title": false }] }
         ],
         "headers": [
             { "hasSort": true, "id": "id", "title": "\u041d\u043e\u043c\u0435\u0440 \u0432 \u0411\u0414" },

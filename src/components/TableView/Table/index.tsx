@@ -16,8 +16,9 @@ interface Props {
     onSortChange: (val: string, direction: DirectionType) => void;
     onItemClickAction: (item: TableDataType, action: TableActionType) => void;
     setMultipleItems: React.Dispatch<React.SetStateAction<TableDataType[]>>;
-    maxFieldLength: number,
-    tdGen?: (col: TableColumnType, data: any, model: any) => any,
+    maxFieldLength: number;
+    tdGen?: (col: TableColumnType, data: any, model: any) => any;
+    customHeader?: (ind: number) => TableColumnType | null;
 }
 
 const Table = ({
@@ -30,6 +31,7 @@ const Table = ({
     setMultipleItems,
     maxFieldLength,
     tdGen = () => null,
+    customHeader = () => null,
 }: Props) => {
     const [sort, setSort] = useState<{ [key: string]: DirectionType }>({});
 
@@ -49,6 +51,17 @@ const Table = ({
         onSortChange(item.id, nextSort);
     };
 
+    // Генератор ячейки
+    const tdGenerator = (Comp: any) => {
+        if (!Comp) return null;
+
+        if ((['string', 'number'].includes(typeof Comp))) {
+            return `${Comp}`.length > maxFieldLength ? <span title={Comp}>{`${Comp}`.substring(0, maxFieldLength)}...</span> : Comp
+        }
+
+        return <Comp />;
+    }
+
     return (
         <div className="table">
             <div className="table__container">
@@ -58,15 +71,26 @@ const Table = ({
                             <th className="table-head-item table-head-item--small">
                                 <Checkbox checked={multipleItems.length === data.length && !!data.length} onChange={(e) => onCheckAll(e)} />
                             </th>
-                            {header.map((item) => (
-                                <TableHeadItem
-                                    key={`${item.id}-th`}
-                                    sortable={item.hasSort}
-                                    sort={sort?.[item.id] || ''}
-                                    title={item.title}
-                                    onClick={() => onSortClick(item)}
-                                />
-                            ))}
+                            {header.map((item, index) => {
+                                const custonHeader = customHeader(index);
+
+                                return ([
+                                    <TableHeadItem
+                                        key={`${item.id}-th`}
+                                        sortable={item.hasSort}
+                                        sort={sort?.[item.id] || ''}
+                                        title={item.title}
+                                        onClick={() => onSortClick(item)}
+                                    />,
+                                    !!custonHeader && <TableHeadItem
+                                        key={`${custonHeader.id}-th`}
+                                        sortable={custonHeader.hasSort}
+                                        sort={sort?.[custonHeader.id] || ''}
+                                        title={custonHeader.title}
+                                        onClick={() => onSortClick(custonHeader)}
+                                    />
+                                ]);
+                            })}
                             <TableHeadItem sort={''} title={''} onClick={() => { }} />
                         </tr>
                     </thead>
@@ -82,18 +106,22 @@ const Table = ({
                                         const tdGenComp = tdGen(col, row[col.id], row);
                                         const Comp = tdGenComp !== null ? tdGenComp : row[col.id];
 
-                                        return (
-                                            <td key={'tr' + index} className="table__cell">
-                                                {!!Comp && (['string', 'number'].includes(typeof Comp) ? (
-                                                    `${Comp}`.length > maxFieldLength ?
-                                                        <span title={Comp}>{`${Comp}`.substring(0, maxFieldLength)}...</span>
-                                                        :
-                                                        Comp
-                                                ) :
-                                                    <Comp />
-                                                )}
-                                            </td>
-                                        );
+                                        const custonHeader = customHeader(index);
+                                        let CustomTd: any = null;
+                                        if (!!custonHeader) {
+                                            CustomTd = tdGen(custonHeader, null, row);
+                                        }
+
+                                        return ([
+                                            <td key={'tr' + col.id} className="table__cell">
+                                                {tdGenerator(Comp)}
+                                            </td>,
+                                            !!custonHeader && (
+                                                <td key={'tr' + custonHeader.id} className="table__cell">
+                                                    {tdGenerator(CustomTd)}
+                                                </td>
+                                            )
+                                        ]);
                                     })}
                                     <td className="table__cell table__cell--action">
                                         <div className="table__cell--action__container">
