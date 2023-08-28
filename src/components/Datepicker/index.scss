@@ -22,4 +22,17 @@
         color: inherit;
         background-color: var(--background-card-primary);
     }
+
+    &__invalid {
+        border: 1px solid var(--status-red-danger);
+
+        &:focus {
+            outline: 1px solid var(--status-red-danger);
+        }
+
+        &__message {
+            margin: 0.5rem 0;
+            color: red;
+        }
+    }
 }

@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { CaretDownMdIcon } from "../../icons";
+import React, { useEffect, useState } from 'react';
+import { CaretDownMdIcon } from '../../icons';
 
-import "./index.scss";
+import './index.scss';
 
 interface Props {
     options: {
@@ -17,22 +17,9 @@ interface Props {
     invalid?: boolean | string;
     style?: React.CSSProperties;
     readOnly?: boolean;
-    required?: boolean;
 }
 
-const Select = ({
-    options,
-    label,
-    id,
-    name,
-    value,
-    defaultValue,
-    onChange,
-    invalid = false,
-    style = {},
-    readOnly = false,
-    required = false,
-}: Props) => {
+const Select = ({ options, label, id, name, value, defaultValue, onChange, invalid = false, style = {}, readOnly = false }: Props) => {
     const [isEmpty, setIsEmpty] = useState(true);
 
     useEffect(() => {
@@ -52,15 +39,12 @@ const Select = ({
                 <select
                     defaultValue={defaultValue}
                     value={value}
-                    className={`select__element ${
-                        invalid ? "select__invalid" : ""
-                    }`}
+                    className={`select__element ${invalid ? 'select__invalid' : ''}`}
                     onChange={handleChange}
                     id={id}
                     name={name}
                     style={style}
                     disabled={readOnly}
-                    required={required}
                 >
                     <option value=""></option>
                     {options.map((option) => (
@@ -69,17 +53,12 @@ const Select = ({
                         </option>
                     ))}
                 </select>
-                <label
-                    className={`select__label ${
-                        isEmpty ? "select__label--placeholder" : ""
-                    }`}
-                    htmlFor={id}
-                >
+                <label className={`select__label ${isEmpty ? 'select__label--placeholder' : ''}`} htmlFor={id}>
                     {label}
                 </label>
                 <CaretDownMdIcon className="select__svg" />
             </div>
-            {invalid && typeof invalid === "string" && (
+            {invalid && typeof invalid === 'string' && (
                 <div className="select__invalid__message">
                     <p>{invalid}</p>
                 </div>

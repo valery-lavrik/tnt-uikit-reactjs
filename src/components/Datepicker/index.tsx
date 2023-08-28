@@ -1,10 +1,11 @@
 //import "react-datepicker/dist/react-datepicker.css";
-import "./index.scss";
+import './index.scss';
 
 interface Props {
     label: string;
     value: string | number | undefined;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    invalid?: boolean | string;
     min?: string | number | undefined;
     max?: string | number | undefined;
     id?: string;
@@ -13,7 +14,6 @@ interface Props {
     className?: string;
     readOnly?: boolean;
     showTimeSelect?: boolean;
-    required?: boolean;
 }
 
 const DatepickerComp = ({
@@ -22,29 +22,35 @@ const DatepickerComp = ({
     name,
     value,
     onChange,
+    invalid = false,
     min,
     max,
     style = {},
-    className = "",
+    className = '',
     readOnly = false,
     showTimeSelect = false,
-    required = false,
 }: Props) => {
     return (
-        <div className="datepicker" style={style}>
-            <input
-                type={showTimeSelect ? "datetime-local" : "date"}
-                readOnly={readOnly}
-                className={`datepicker__element ${className}`}
-                value={value}
-                onChange={(e) => onChange(e)}
-                name={name}
-                id={id}
-                min={min}
-                max={max}
-                required={required}
-            />
-            <label className="datepicker__label">{label}</label>
+        <div className="datepicker__container">
+            <div className="datepicker" style={style}>
+                <input
+                    type={showTimeSelect ? 'datetime-local' : 'date'}
+                    readOnly={readOnly}
+                    className={`datepicker__element ${invalid ? 'datepicker__invalid' : ''}`}
+                    value={value}
+                    onChange={(e) => onChange(e)}
+                    name={name}
+                    id={id}
+                    min={min}
+                    max={max}
+                />
+                <label className="datepicker__label">{label}</label>
+            </div>
+            {invalid && typeof invalid === 'string' && (
+                <div className="input__invalid__message">
+                    <p>{invalid}</p>
+                </div>
+            )}
         </div>
     );
 };
