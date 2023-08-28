@@ -1,9 +1,14 @@
-@import '../../scss/variables.scss';
+@import "../../scss/variables.scss";
 
 .input {
     position: relative;
     display: flex;
     flex-direction: column;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
 
     &__label {
         position: absolute;
@@ -52,6 +57,11 @@
 
         &:focus {
             outline: 1px solid var(--status-red-danger);
+        }
+
+        &__message {
+            margin: 0.5rem 0;
+            color: red;
         }
     }
 }

@@ -18,7 +18,21 @@
         border: 1px solid var(--background-secondary);
         border-radius: 1rem;
         font-size: var(--font-size-default);
+        font-family: inherit;
         color: inherit;
         background-color: var(--background-card-primary);
+    }
+
+    &__invalid {
+        border: 1px solid var(--status-red-danger);
+
+        &:focus {
+            outline: 1px solid var(--status-red-danger);
+        }
+
+        &__message {
+            margin: 0.5rem 0;
+            color: red;
+        }
     }
 }

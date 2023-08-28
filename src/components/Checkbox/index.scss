@@ -1,15 +1,28 @@
 @import '../../scss/variables.scss';
 
-.sidebar-checkbox {
+.checkbox {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     margin: 0.3rem;
     cursor: pointer;
 
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     input[type='checkbox'] {
         transform: scale(130%);
         accent-color: var(--primary-default);
         cursor: pointer;
+    }
+
+    &__invalid {
+        &__message {
+            margin: 0.5rem 0;
+            color: red;
+        }
     }
 }
