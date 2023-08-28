@@ -17,6 +17,7 @@ interface Props {
     invalid?: boolean | string;
     style?: React.CSSProperties;
     readOnly?: boolean;
+    required?: boolean;
 }
 
 const Select = ({
@@ -30,6 +31,7 @@ const Select = ({
     invalid = false,
     style = {},
     readOnly = false,
+    required = false,
 }: Props) => {
     const [isEmpty, setIsEmpty] = useState(true);
 
@@ -58,6 +60,7 @@ const Select = ({
                     name={name}
                     style={style}
                     disabled={readOnly}
+                    required={required}
                 >
                     <option value=""></option>
                     {options.map((option) => (

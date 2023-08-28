@@ -13,6 +13,7 @@ interface Props {
     type?: "text" | "password";
     style?: React.CSSProperties;
     readOnly?: boolean;
+    required?: boolean;
 }
 
 const Input = ({
@@ -25,6 +26,7 @@ const Input = ({
     type = "text",
     style = {},
     readOnly = false,
+    required = false,
 }: Props) => {
     const [showPassword, setShowPassword] = useState(false);
 
@@ -46,6 +48,7 @@ const Input = ({
                         style={style}
                         placeholder=" "
                         readOnly={readOnly}
+                        required={required}
                     />
                 ) : (
                     <input
@@ -60,6 +63,7 @@ const Input = ({
                         style={style}
                         placeholder=" "
                         readOnly={readOnly}
+                        required={required}
                     />
                 )}
                 <label className="input__label">{label}</label>

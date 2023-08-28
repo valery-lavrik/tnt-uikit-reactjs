@@ -451,6 +451,14 @@ const Example = () => {
                 </Badge>
             </div>
             <div className="test__row" style={{ gap: "2rem" }}>
+                <Badge>1</Badge>
+                <Badge status="dark">10</Badge>
+                <Badge status="success">20</Badge>
+                <Badge status="error">30</Badge>
+                <Badge status="await">400</Badge>
+                <Badge status="work">500</Badge>
+            </div>
+            <div className="test__row" style={{ gap: "2rem" }}>
                 <Popup
                     text="Поп-ап это обертка"
                     subtext="Которую можно сделать вокруг любого элемента"

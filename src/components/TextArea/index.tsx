@@ -10,6 +10,7 @@ interface Props {
     onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     style?: React.CSSProperties;
     readOnly?: boolean;
+    required?: boolean;
 }
 
 const TextArea = ({
@@ -22,6 +23,7 @@ const TextArea = ({
     onChange,
     style = {},
     readOnly = false,
+    required = false,
 }: Props) => {
     return (
         <div className="text-area__container">
@@ -39,6 +41,7 @@ const TextArea = ({
                     name={name}
                     style={style}
                     readOnly={readOnly}
+                    required={required}
                 />
                 <label className="text-area__label">{label}</label>
             </div>
