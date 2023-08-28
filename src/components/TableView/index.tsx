@@ -25,7 +25,7 @@ interface Props {
     header: TableColumnType[];
     data: TableDataType[];
     maxFieldLength?: number,
-    tdGen?: (a: TableColumnType, b: any) => any,
+    tdGen?: (a: TableColumnType, b: any, c: any) => any,
 }
 
 const TableView = ({

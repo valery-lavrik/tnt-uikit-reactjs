@@ -17,7 +17,7 @@ interface Props {
     onItemClickAction: (item: TableDataType, action: TableActionType) => void;
     setMultipleItems: React.Dispatch<React.SetStateAction<TableDataType[]>>;
     maxFieldLength: number,
-    tdGen?: (col: TableColumnType, data: any) => any,
+    tdGen?: (col: TableColumnType, data: any, model: any) => any,
 }
 
 const Table = ({
@@ -79,7 +79,7 @@ const Table = ({
                                         <Checkbox checked={checked} onChange={(e) => onChange(e, row)} />
                                     </td>
                                     {header.map((col, index) => {
-                                        const tdGenComp = tdGen(col, row[col.id]);
+                                        const tdGenComp = tdGen(col, row[col.id], row);
                                         const Comp = tdGenComp !== null ? tdGenComp : row[col.id];
 
                                         return (

@@ -31,10 +31,10 @@ const actionsGroup: TableActionType[] = [
 const TableViewExample = () => {
 
     // модифицировать контент колонок будем так:
-    const tdGenHandler = (col: any, data: any) => {
-        // console.log('col, data', col, data);
+    const tdGenHandler = (col: any, data: any, model: any) => {
 
         if (col.id === 'name') {
+            console.log('col, data', col, data, model);
             return () => <p style={{ color: 'red' }}>{data}</p>
         }
 
