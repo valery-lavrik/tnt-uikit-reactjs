@@ -30,24 +30,36 @@ const actionsGroup: TableActionType[] = [
 
 const TableViewExample = () => {
 
+
+    // Добавлять свои заголовки в таблицу так:
+    const thGenHandler = (ind: number) => {
+        if (ind === 3) {
+            return ({
+                hasSort: false,
+                id: "myCustomHeader",
+                title: "Мой заголовок"
+            });
+        }
+
+        return null;
+    }
+
+
     // модифицировать контент колонок будем так:
     const tdGenHandler = (col: any, data: any, model: any) => {
 
         if (col.id === 'name') {
-            // console.log('col, data', col, data, model);
             return () => <p style={{ color: 'red' }}>{data}</p>
         }
 
         // Мой кастомный TD в таблице (см customHeader параметр)
         if (col.id === 'myCustomHeader') {
-            // console.log('col, data', col, data, model);
             return () => (
                 <p onClick={() => console.log('model', model)} >
                     Мой кастомный компонент
                 </p>
             );
         }
-
 
         return null
     }
@@ -73,17 +85,7 @@ const TableViewExample = () => {
                 data={data?.data || []}
                 maxFieldLength={50}
                 tdGen={tdGenHandler}
-                customHeader={(ind: number) => {
-                    if (ind === 3) {
-                        return ({
-                            hasSort: false,
-                            id: "myCustomHeader",
-                            title: "Мой заголовок"
-                        });
-                    }
-
-                    return null;
-                }}
+                customHeader={thGenHandler}
             />
 
         </div>
