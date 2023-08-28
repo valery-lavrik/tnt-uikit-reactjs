@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { PlusIcon, InfoIcon } from "../icons";
+import { dateFormatter } from "../utils/date";
 
 import Input from "../components/Input";
 import Select from "../components/Select";
@@ -21,9 +22,9 @@ import ServicesCard from "../components/ServicesCard";
 import IconsList from "./IconsList";
 import TableViewExample from "./TableViewExample";
 import TextArea from "../components/TextArea";
+import Datepicker from "../components/Datepicker";
 
 import "./index.scss";
-import Datepicker from "../components/Datepicker";
 
 const mockListOfDomains = [
     {
@@ -59,6 +60,27 @@ const Example = () => {
     const [checkbox2, setCheckbox2] = useState(false);
     const [textArea, setTextArea] = useState("");
     const { firstInput, secondInput, thirdInput } = formData;
+    const [date, setDate] = useState<string | number | undefined>("");
+
+    const defaultDateTime = () => {
+        const date = new Date();
+        date.setDate(date.getDate());
+        return dateFormatter(date, true);
+    };
+    const [dateTime, setDateTime] = useState<string | number | undefined>(
+        defaultDateTime
+    );
+
+    const minDate = () => {
+        const date = new Date();
+        date.setDate(date.getDate() - 10);
+        return dateFormatter(date);
+    };
+    const maxDate = () => {
+        const date = new Date();
+        date.setDate(date.getDate() + 10);
+        return dateFormatter(date);
+    };
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
         setFormData((prevState) => ({
@@ -80,6 +102,12 @@ const Example = () => {
 
     const onTextAreaChange = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
         setTextArea(e.target.value);
+
+    const onDatePickerChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+        setDate(e.target.value);
+
+    const onDateTimePickerChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+        setDateTime(e.target.value);
 
     return (
         <div className="test">
@@ -142,6 +170,23 @@ const Example = () => {
                     label="Введите сообщение..."
                     rows={4}
                     invalid={textArea.length < 1 ? "Напечатай текст!" : false}
+                />
+            </div>
+            <div className="test__row" style={{ gap: "3rem" }}>
+                <Datepicker
+                    label="Время запуска"
+                    value={dateTime}
+                    min={defaultDateTime()}
+                    onChange={onDateTimePickerChange}
+                    showTimeSelect
+                />
+                <Datepicker
+                    label="Ближайший запуск"
+                    value={date}
+                    onChange={onDatePickerChange}
+                    min={minDate()}
+                    max={maxDate()}
+                    required
                 />
             </div>
             <Divider style={{ marginBottom: "2rem" }} />
@@ -489,12 +534,11 @@ const ModalRightTestContent = () => {
     const [allChecked, setAllChecked] = useState(false);
     const [text, setText] = useState("Отправка писем");
     const [textArea, setTextArea] = useState("");
-    const [date, setDate] = useState<Date | null>(new Date());
 
-    const minDate = new Date();
-    const maxDate = new Date();
-    minDate.setDate(minDate.getDate() - 7);
-    maxDate.setDate(maxDate.getDate() + 7);
+    const todayDate = new Date();
+    const [date, setDate] = useState<string | number | undefined>(
+        dateFormatter(todayDate)
+    );
 
     const { last, plan, today } = checkbox;
 
@@ -528,7 +572,8 @@ const ModalRightTestContent = () => {
     const handleTextArea = (e: React.ChangeEvent<HTMLTextAreaElement>) =>
         setTextArea(e.target.value);
 
-    const handleDatepicker = (date: Date | null) => setDate(date);
+    const handleDatepicker = (e: React.ChangeEvent<HTMLInputElement>) =>
+        setDate(e.target.value);
 
     return (
         <div
@@ -626,10 +671,8 @@ const ModalRightTestContent = () => {
                 <Divider />
                 <Datepicker
                     label="Ближайший запуск"
-                    selected={date}
+                    value={date}
                     onChange={handleDatepicker}
-                    minDate={minDate}
-                    maxDate={maxDate}
                 />
                 <Divider />
             </div>

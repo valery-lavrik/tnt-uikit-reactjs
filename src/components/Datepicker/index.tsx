@@ -1,53 +1,48 @@
-import DatePicker from "react-datepicker";
-
-import "react-datepicker/dist/react-datepicker.css";
+//import "react-datepicker/dist/react-datepicker.css";
 import "./index.scss";
 
 interface Props {
     label: string;
-    selected: Date | null;
-    onChange: (date: Date | null) => void;
-    minDate?: Date | null | undefined;
-    maxDate?: Date | null | undefined;
+    value: string | number | undefined;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    min?: string | number | undefined;
+    max?: string | number | undefined;
     id?: string;
     name?: string;
     style?: React.CSSProperties;
     className?: string;
     readOnly?: boolean;
-    dateFormat?: string,
-    timeFormat?: string,
-    showTimeSelect?: boolean,
+    showTimeSelect?: boolean;
+    required?: boolean;
 }
 
 const DatepickerComp = ({
     label,
     id,
     name,
-    selected,
+    value,
     onChange,
-    minDate,
-    maxDate,
+    min,
+    max,
     style = {},
     className = "",
     readOnly = false,
-    dateFormat = 'yyyy.MM.dd',
-    timeFormat = "HH:mm",
     showTimeSelect = false,
+    required = false,
 }: Props) => {
     return (
         <div className="datepicker" style={style}>
-            <DatePicker
+            <input
+                type={showTimeSelect ? "datetime-local" : "date"}
                 readOnly={readOnly}
                 className={`datepicker__element ${className}`}
-                selected={selected}
-                onChange={(date: Date | null) => onChange(date)}
+                value={value}
+                onChange={(e) => onChange(e)}
                 name={name}
                 id={id}
-                minDate={minDate}
-                maxDate={maxDate}
-                dateFormat={dateFormat}
-                timeFormat={timeFormat}
-                showTimeSelect={showTimeSelect}
+                min={min}
+                max={max}
+                required={required}
             />
             <label className="datepicker__label">{label}</label>
         </div>
