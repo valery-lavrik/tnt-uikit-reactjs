@@ -24,8 +24,9 @@ interface Props {
     actionItemsGroup: TableActionType[];
     header: TableColumnType[];
     data: TableDataType[];
-    maxFieldLength?: number,
-    tdGen?: (a: TableColumnType, b: any, c: any) => any,
+    maxFieldLength?: number;
+    tdGen?: (a: TableColumnType, b: any, c: any) => any;
+    customHeader?: (ind: number) => TableColumnType | null;
 }
 
 const TableView = ({
@@ -45,6 +46,7 @@ const TableView = ({
     data,
     maxFieldLength = 10,
     tdGen = () => null,
+    customHeader = () => null,
 }: Props) => {
     const [multipleItems, setMultipleItems] = useState<TableDataType[]>([]);
     const pages = Math.ceil(data.length / pageSize);
@@ -80,6 +82,7 @@ const TableView = ({
                 setMultipleItems={setMultipleItems}
                 maxFieldLength={maxFieldLength}
                 tdGen={tdGen}
+                customHeader={customHeader}
             />
 
             <Pagination pages={pages} page={page} onPageChange={onPageChange} />
