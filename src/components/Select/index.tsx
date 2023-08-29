@@ -13,7 +13,7 @@ interface Props {
     name?: string;
     value?: string;
     defaultValue?: string;
-    onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+    onChange?: (e: React.ChangeEvent<HTMLSelectElement> | null) => void;
     invalid?: boolean | string;
     style?: React.CSSProperties;
     readOnly?: boolean;
@@ -23,14 +23,13 @@ const Select = ({ options, label, id, name, value, defaultValue, onChange, inval
     const [isEmpty, setIsEmpty] = useState(true);
 
     useEffect(() => {
-        if (value || defaultValue) setIsEmpty(false);
+        setIsEmpty(!(value || defaultValue));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        onChange && onChange(e);
-        if (!!e.target.value) setIsEmpty(false);
-        else setIsEmpty(true);
+        onChange && onChange(!!e?.target?.value ? e : null);
+        setIsEmpty(!e.target.value);
     };
 
     return (

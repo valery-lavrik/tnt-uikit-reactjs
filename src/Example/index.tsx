@@ -85,7 +85,7 @@ const Example = () => {
             [e.target.id]: e.target.value,
         }));
 
-    const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => console.log(e.target.value);
+    const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement> | null) => console.log(e?.target?.value);
 
     const onSwitchChange = (e: React.ChangeEvent<HTMLInputElement>) => setChecked(e.target.checked);
 
