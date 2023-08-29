@@ -67,7 +67,7 @@ const TableViewExample = () => {
                 status={""}
                 minSearchSize={3}
                 page={1}
-                pageSize={5}
+                totalPage={3}
                 // @ts-ignore
                 filters={data?.info?.filters || []}
                 onSearchChange={(val) => console.log(val)}

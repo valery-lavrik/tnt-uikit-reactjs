@@ -13,7 +13,7 @@ interface Props {
     status: LoadStatusType;
     minSearchSize: number;
     page: number;
-    pageSize: number;
+    totalPage: number;
     filters: OneFilterType[];
     onSearchChange: (val: string) => void;
     onSortChange: (val: string, direction: DirectionType) => void;
@@ -33,7 +33,7 @@ const TableView = ({
     status,
     minSearchSize = 3,
     page = 1,
-    pageSize = 10,
+    totalPage = 1,
     filters,
     onSearchChange,
     onSortChange,
@@ -49,7 +49,6 @@ const TableView = ({
     customHeader = () => null,
 }: Props) => {
     const [multipleItems, setMultipleItems] = useState<TableDataType[]>([]);
-    const pages = Math.ceil(data.length / pageSize);
 
     useEffect(() => {
         if (status === '') {
@@ -84,7 +83,7 @@ const TableView = ({
                 customHeader={customHeader}
             />
 
-            <Pagination pages={pages} page={page} onPageChange={onPageChange} />
+            <Pagination pages={totalPage} page={page} onPageChange={onPageChange} />
         </div>
     );
 };
