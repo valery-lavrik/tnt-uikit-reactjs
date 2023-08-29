@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { SearchMagnifyingGlassIcon, CaretDownMdIcon, MoreVerticalIcon } from '../../../icons';
-import { FilterChangeType, OneFilterType, OneFilterValueType, SelectFiltersType, TableActionType, TableColumnType, TableDataType } from '../types';
+import { FilterChangeType, OneFilterType, OneFilterValueType, SelectFiltersType, TableActionType, TableDataType } from '../types';
 import useFirstRender from '../../../utils/useFirstRender';
 import _ from 'lodash';
 
@@ -14,7 +14,6 @@ import './index.scss';
 interface Props {
     filters: OneFilterType[];
     minSearchSize: number;
-    header: TableColumnType[];
     actionItems: TableActionType[];
     multipleItems: TableDataType[];
     onSearchChange: (val: string) => void;
@@ -22,7 +21,7 @@ interface Props {
     onItemClickAction: (item: TableDataType, action: TableActionType) => void;
 }
 
-const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearchChange, onFilterChange, actionItems, onItemClickAction, header }: Props) => {
+const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearchChange, onFilterChange, actionItems, onItemClickAction }: Props) => {
     const [filtersCollector, setFiltersCollector] = useState<SelectFiltersType>({});
     const onSearchChangeDebounced = _.debounce(onSearchChange, 700);
     const isFirst = useFirstRender();
@@ -104,7 +103,7 @@ const TableActions = ({ filters = [], minSearchSize = 3, multipleItems, onSearch
                             key={`${filter.id}-filter`}
                             Button={() => (
                                 <div key={`filter-${filter.id}`} className="table-actions__filters__item">
-                                    <span>{header?.find(a => a.id === filter.id)?.title || 'Не задано'}</span>
+                                    <span>{filter.title || 'Не задано'}</span>
                                     {!!filtersCollector[filter.id]?.length && <Badge status="dark">{filtersCollector[filter.id].length}</Badge>}
                                     <CaretDownMdIcon />
                                 </div>

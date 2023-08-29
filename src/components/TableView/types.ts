@@ -1,4 +1,4 @@
-export type DirectionType = "asc" | "desc" | "";
+export type DirectionType = 'asc' | 'desc' | '';
 
 export type TableColumnType = {
     id: string;
@@ -32,5 +32,5 @@ export type SelectFiltersType = {
 
 export type FilterChangeType = {
     id: string;
-    values: (string | boolean | null)[];
+    values: (string | boolean | null | number)[];
 };

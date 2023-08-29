@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { DirectionType, FilterChangeType, OneFilterType, TableActionType, TableColumnType, TableDataType } from './types';
 import { LoadStatusType } from '../../Types';
 
@@ -64,7 +64,6 @@ const TableView = ({
             <TableActions
                 minSearchSize={minSearchSize}
                 filters={filters}
-                header={header}
                 actionItems={actionItemsGroup}
                 onItemClickAction={onItemClickAction}
                 multipleItems={multipleItems}

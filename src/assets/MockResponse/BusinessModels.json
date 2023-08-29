@@ -1,74 +1,170 @@
 {
     "data": [
         {
-            "analyst_id": null,
-            "client_id": null,
-            "confluence_url": null,
-            "creation_date": "2022-08-12",
-            "description": "\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0438 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0430 \u0441\u0432\u043e\u0434\u043d\u043e\u0439 \u0431\u0443\u0445\u0433\u0430\u043b\u0442\u0435\u0440\u0441\u043a\u043e\u0439 \u043e\u0442\u0447\u0435\u0442\u043d\u043e\u0441\u0442\u0438 \u0438 \u043a\u043e\u043d\u0441\u043e\u043b\u0438\u0434\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0439 \u0444\u0438\u043d\u0430\u043d\u0441\u043e\u0432\u043e\u0439 \u043e\u0442\u0447\u0435\u0442\u043d\u043e\u0441\u0442\u0438 \u041e\u0421\u0422",
+            "business_process_id": null,
+            "description": "\u0418\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430",
+            "developer_id": null,
             "id": 1,
-            "name": "verification_reports_ost",
-            "version": null
+            "multiinstance": false,
+            "multithreading": false,
+            "name": "verification_reports_ost_worker",
+            "repository_url": "https://bitbucket.dc-prod.tn.corp/projects/KISRBP/repos/2022_tnf_verification_reports_ost_eva/browse",
+            "run_from_orchestrator": null,
+            "run_manually": null
         },
         {
-            "analyst_id": null,
-            "client_id": null,
-            "confluence_url": null,
-            "creation_date": "2023-06-04",
-            "description": "\u041f\u0440\u0438\u0441\u0432\u043e\u0435\u043d\u0438\u0435 \u041a\u0411\u041a \u0432\u0445\u043e\u0434\u044f\u0449\u0438\u043c \u043f\u043b\u0430\u0442\u0435\u0436\u043d\u044b\u043c \u043f\u043e\u0440\u0443\u0447\u0435\u043d\u0438\u044f\u043c \u0432 \u0418\u0421 \"\u0420\u0426\u041a\" \u0432 \u0441\u043e\u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0438 \u0441 \u043a\u043e\u0434\u0438\u0440\u043e\u0432\u043a\u043e\u0439 \u0431\u044e\u0434\u0436\u0435\u0442\u043d\u043e\u0433\u043e \u043f\u0430\u043a\u0435\u0442\u0430 \u0438\u043b\u0438 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0438 \u0434\u0430\u043d\u043d\u044b\u0445 \u0438\u0437 \u0410\u0421\u041a\u0418\u0414",
+            "business_process_id": null,
+            "description": "\u0421\u0431\u043e\u0440\u0449\u0438\u043a \u0437\u0430\u0434\u0430\u0447",
+            "developer_id": null,
             "id": 2,
-            "name": "additional_incoming_payments",
-            "version": null
+            "multiinstance": false,
+            "multithreading": false,
+            "name": "verification_reports_ost_getter",
+            "repository_url": "https://bitbucket.dc-prod.tn.corp/projects/KISRBP/repos/2022_tnf_verification_reports_ost_eva/browse",
+            "run_from_orchestrator": null,
+            "run_manually": null
         },
         {
-            "analyst_id": null,
-            "client_id": null,
-            "confluence_url": null,
-            "creation_date": "2023-03-14",
-            "description": "\u0424\u043e\u0440\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0440\u043e\u0432\u043e\u0434\u043e\u043a \u0432 \u041a\u0418\u0421 \"\u0413\u0430\u043b\u0430\u043a\u0442\u0438\u043a\u0430\" \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0438 \u0431\u0430\u043d\u043a\u043e\u0432\u0441\u043a\u043e\u0439 \u0432\u044b\u043f\u0438\u0441\u043a\u0438. \u0421\u0432\u0435\u0440\u043a\u0430 \u0434\u0430\u043d\u043d\u044b\u0445 \u0432 \u0432\u044b\u043f\u0438\u0441\u043a\u0435 \u0438 \u0432 \u041a\u0418\u0421 \"\u0413\u0430\u043b\u0430\u043a\u0442\u0438\u043a\u0430\"",
+            "business_process_id": null,
+            "description": "\u0418\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430",
+            "developer_id": null,
             "id": 3,
-            "name": "bank_statement_galaxy",
-            "version": null
+            "multiinstance": false,
+            "multithreading": false,
+            "name": "additional_incoming_payments_worker",
+            "repository_url": "https://bitbucket.dc-prod.tn.corp/projects/KISRBP/repos/04_2023_tnf_additional_incoming_payments/browse",
+            "run_from_orchestrator": null,
+            "run_manually": null
         },
         {
-            "analyst_id": null,
-            "client_id": null,
-            "confluence_url": null,
-            "creation_date": "2023-05-02",
-            "description": "\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043f\u043b\u0430\u0442\u0435\u0436\u043d\u044b\u0445 \u043f\u043e\u0440\u0443\u0447\u0435\u043d\u0438\u0439 \u0432 \u0418\u0421 \"\u0420\u0426\u041a\" \u043d\u0430 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u043e\u0441\u0442\u044c \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0433\u043e \u041a\u0411\u041a \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0430\u043d\u0438\u0438 \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0438 \u043f\u043b\u0430\u0442\u0435\u0436\u043d\u043e\u0433\u043e \u043f\u043e\u0440\u0443\u0447\u0435\u043d\u0438\u044f",
+            "business_process_id": null,
+            "description": "\u0421\u0431\u043e\u0440\u0449\u0438\u043a \u0437\u0430\u0434\u0430\u0447",
+            "developer_id": null,
             "id": 4,
-            "name": "verify_payments_kbk",
-            "version": null
+            "multiinstance": false,
+            "multithreading": false,
+            "name": "additional_incoming_payments_getter",
+            "repository_url": "https://bitbucket.dc-prod.tn.corp/projects/KISRBP/repos/04_2023_tnf_additional_incoming_payments/browse",
+            "run_from_orchestrator": null,
+            "run_manually": null
         },
         {
-            "analyst_id": null,
-            "client_id": null,
-            "confluence_url": null,
-            "creation_date": null,
-            "description": "\u0418\u0417\u041c\u041d\u0415\u041d\u0415\u041d\u041e \u0427\u0415\u0420\u0415\u0417 PUT",
+            "business_process_id": null,
+            "description": "\u0418\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430",
+            "developer_id": null,
             "id": 5,
-            "name": "Test_put_no_attrs",
-            "version": "1.0.0"
+            "multiinstance": false,
+            "multithreading": false,
+            "name": "bank_statement_galaxy_worker",
+            "repository_url": "https://bitbucket.dc-prod.tn.corp/projects/KISRBP/repos/03_2023_tnf_bank_statement_galaxy/browse",
+            "run_from_orchestrator": null,
+            "run_manually": null
+        },
+        {
+            "business_process_id": null,
+            "description": "\u0421\u0431\u043e\u0440\u0449\u0438\u043a \u0437\u0430\u0434\u0430\u0447",
+            "developer_id": null,
+            "id": 6,
+            "multiinstance": false,
+            "multithreading": false,
+            "name": "bank_statement_galaxy_getter",
+            "repository_url": "https://bitbucket.dc-prod.tn.corp/projects/KISRBP/repos/03_2023_tnf_bank_statement_galaxy/browse",
+            "run_from_orchestrator": null,
+            "run_manually": null
+        },
+        {
+            "business_process_id": null,
+            "description": "\u0421\u0431\u043e\u0440\u0449\u0438\u043a \u0437\u0430\u0434\u0430\u0447",
+            "developer_id": null,
+            "id": 7,
+            "multiinstance": false,
+            "multithreading": false,
+            "name": "verify_payments_kbk_getter",
+            "repository_url": "https://bitbucket.dc-prod.tn.corp/projects/KISRBP/repos/03_2023_tnf_bank_statement_galaxy/browse",
+            "run_from_orchestrator": null,
+            "run_manually": null
+        },
+        {
+            "business_process_id": null,
+            "description": "\u0418\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430",
+            "developer_id": null,
+            "id": 8,
+            "multiinstance": false,
+            "multithreading": false,
+            "name": "verify_payments_kbk_worker",
+            "repository_url": "https://bitbucket.dc-prod.tn.corp/projects/KISRBP/repos/03_2023_tnf_bank_statement_galaxy/browse",
+            "run_from_orchestrator": null,
+            "run_manually": null
         }
     ],
     "info": {
         "filters": [
-            { "id": "analyst_id", "values": [{ "count": 5, "title": "Наименование" }] },
-            { "id": "client_id", "values": [{ "count": 5, "title": "Версия" }] },
-            { "id": "version", "values": [{ "count": 1, "title": true }, { "count": 1, "title": false }] }
+            { "id": "multithreading", "title": "првоерка", "values": [{ "count": 0, "title": true }, { "count": 8, "title": false }] },
+            { "id": "multiinstance", "values": [{ "count": 0, "title": true }, { "count": 8, "title": false }] },
+            { "id": "run_manually", "values": [{ "count": 0, "title": true }, { "count": 0, "title": false }] },
+            { "id": "run_from_orchestrator", "values": [{ "count": 0, "title": true }, { "count": 0, "title": false }] }
         ],
         "headers": [
-            { "hasSort": true, "id": "id", "title": "\u041d\u043e\u043c\u0435\u0440 \u0432 \u0411\u0414" },
+            { "hasSort": true, "id": "id", "title": "ID" },
             { "hasSort": true, "id": "name", "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435" },
             { "hasSort": false, "id": "description", "title": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435" },
-            { "hasSort": true, "id": "version", "title": "\u0412\u0435\u0440\u0441\u0438\u044f" },
-            { "hasSort": false, "id": "confluence_url", "title": "Confluence" },
-            { "hasSort": true, "id": "analyst_id", "title": "\u0410\u043d\u0430\u043b\u0438\u0442\u0438\u043a" },
-            { "hasSort": true, "id": "client_id", "title": "\u0417\u0430\u043a\u0430\u0437\u0447\u0438\u043a" },
-            { "hasSort": true, "id": "creation_date", "title": "\u0414\u0430\u0442\u0430 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u044f" }
+            { "hasSort": true, "id": "repository_url", "title": "Bitbucket" },
+            {
+                "hasSort": true,
+                "id": "multithreading",
+                "title": "\u041c\u043d\u043e\u0433\u043e\u043f\u043e\u0442\u043e\u0447\u043d\u043e\u0441\u0442\u044c"
+            }
         ],
         "minSearchSize": 3,
         "page": 1,
-        "pageSize": 10
+        "pageSize": 10,
+        "structure": {
+            "business_process_id": {
+                "label": "\u0411\u0438\u0437\u043d\u0435\u0441\u0441-\u043f\u0440\u043e\u0446\u0435\u0441\u0441",
+                "require": false,
+                "skipOnCreate": false,
+                "type": "number",
+                "sortIndex": 0
+            },
+            "description": { "label": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435", "require": false, "skipOnCreate": false, "type": "text" },
+            "developer_id": {
+                "label": "\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u0447\u0438\u043a",
+                "require": false,
+                "skipOnCreate": false,
+                "type": "number",
+                "sortIndex": 1
+            },
+            "id": { "label": "ID", "require": true, "skipOnCreate": true, "type": "number" },
+            "multiinstance": {
+                "label": "\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043d\u0438\u0435 \u043d\u0430 \u043c\u043d\u043e\u0436\u0435\u0441\u0442\u0432\u043e \u0422\u0423\u0417",
+                "require": false,
+                "skipOnCreate": false,
+                "type": "checkbox",
+                "sortIndex": 2
+            },
+            "multithreading": {
+                "label": "\u041c\u043d\u043e\u0433\u043e\u043f\u043e\u0442\u043e\u0447\u043d\u043e\u0441\u0442\u044c",
+                "require": false,
+                "skipOnCreate": false,
+                "type": "checkbox",
+                "sortIndex": 3
+            },
+            "name": { "label": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", "require": false, "skipOnCreate": false, "type": "text" },
+            "repository_url": { "label": "Bitbucket", "require": false, "skipOnCreate": false, "type": "text" },
+            "run_from_orchestrator": {
+                "label": "\u0417\u0430\u043f\u0443\u0441\u043a \u0438\u0437 \u041e\u0440\u043a\u0435\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u0430",
+                "require": false,
+                "skipOnCreate": false,
+                "type": "checkbox",
+                "sortIndex": 4
+            },
+            "run_manually": {
+                "label": "\u0420\u0443\u0447\u043d\u043e\u0439 \u0437\u0430\u043f\u0443\u0441\u043a",
+                "require": false,
+                "skipOnCreate": false,
+                "type": "checkbox",
+                "sortIndex": 5
+            }
+        }
     }
 }
